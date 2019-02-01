@@ -31,3 +31,4 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 # Python
 alias python=python3
 alias pip=pip3
+
