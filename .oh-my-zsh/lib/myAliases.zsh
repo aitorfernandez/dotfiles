@@ -4,7 +4,7 @@ alias lsa='ls -lah'
 alias ll='ls -l'
 
 alias c='clear'
-alias q="exit"
+alias q='exit'
 
 # Some more alias to avoid making mistakes:
 alias rm='rm -i'
@@ -32,3 +32,5 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias python=python3
 alias pip=pip3
 
+alias ac='deactivate &> /dev/null; source .venv/bin/activate'
+alias de='deactivate'

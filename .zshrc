@@ -9,6 +9,6 @@ plugins=(
   zsh-syntax-highlighting
 )
 
-export PATH=$PATH:/usr/local/bin:/usr/local/sbin
+export PATH=$PATH:/usr/local/sbin
 
 source $ZSH/oh-my-zsh.sh
