@@ -22,10 +22,10 @@ let g:netrw_sort_sequence   ='[\/]$,*'
 " space instead of tabs
 set expandtab
 " tab==four spaces
-set tabstop     =4
+set tabstop     =2
 " spaces for auto-indent
-set shiftwidth  =4
-set softtabstop =4
+set shiftwidth  =2
+set softtabstop =2
 " dont't break words when wrapping text
 set linebreak
 
@@ -36,4 +36,3 @@ set directory =$v/tmp/swap/
 set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
-

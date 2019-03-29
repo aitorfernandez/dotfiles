@@ -32,5 +32,6 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias python=python3
 alias pip=pip3
 
+alias venv='python -m venv .venv'
 alias ac='deactivate &> /dev/null; source .venv/bin/activate'
 alias de='deactivate'
