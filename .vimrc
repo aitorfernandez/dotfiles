@@ -2,6 +2,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+set background=dark
+colorscheme solarized
+
 let $v = $HOME.('/.vim')
 
 " powerful backspace
@@ -36,3 +39,20 @@ set directory =$v/tmp/swap/
 set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
+
+" Searching
+set incsearch hlsearch smartcase ignorecase
+" Turn off highlighting in insert mode, and turn back on again when leaving
+augroup highlight_search
+  autocmd!
+  autocmd InsertEnter * :setlocal nohlsearch
+  autocmd InsertLeave * :setlocal hlsearch
+augroup END
+nnoremap <leader>/ :nohlsearch<cr>
+
+nnoremap <space> :bnext<cr>
+nnoremap <bs> :bprev<cr>
+
+" Wildmenu
+set wildmenu                        " Command line autocompletion
+set wildmode=list:longest,full      " Shows all the options
