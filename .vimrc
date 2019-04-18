@@ -75,10 +75,9 @@ fun! TrimWhitespace()
   call winrestview(l:save)
 endfun
 
-augroup trim_whitespace_and_lines
+augroup trim_whitespace
   autocmd!
   autocmd BufWritePre * :call TrimWhitespace()
-  autocmd BufWritePre * $put _ | $;?\(^\s*$\)\@!?+1,$d
 augroup end
 
 " sort
