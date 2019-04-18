@@ -7,6 +7,11 @@ colorscheme solarized
 
 let $v = $HOME.('/.vim')
 
+set updatetime=100
+
+" zsh
+set shell=/bin/zsh
+
 " powerful backspace
 set backspace=indent,eol,start
 " line numbers
@@ -22,6 +27,13 @@ let g:netrw_liststyle       =3
 " directories on the top, files below
 let g:netrw_sort_sequence   ='[\/]$,*'
 
+" snippes
+let g:UltiSnipsExpandTrigger      ='<c-j>'
+let g:UltiSnipsJumpForwardTrigger ='<c-j>'
+
+" Show hidden chars
+set listchars=tab:→\ ,eol:¬
+
 " space instead of tabs
 set expandtab
 " tab==four spaces
@@ -32,7 +44,6 @@ set softtabstop =2
 " dont't break words when wrapping text
 set linebreak
 
-" backup/swap/info/undo settings
 set backup
 set backupdir =$v/tmp/backup/
 set directory =$v/tmp/swap/
@@ -54,5 +65,31 @@ nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
 
 " Wildmenu
-set wildmenu                        " Command line autocompletion
-set wildmode=list:longest,full      " Shows all the options
+set wildmenu                   " Command line autocompletion
+set wildmode=list:longest,full " Shows all the options
+
+" trailing whitespace
+fun! TrimWhitespace()
+  let l:save = winsaveview()
+  keeppatterns %s/\s\+$//e
+  call winrestview(l:save)
+endfun
+
+augroup trim_whitespace_and_lines
+  autocmd!
+  autocmd BufWritePre * :call TrimWhitespace()
+  autocmd BufWritePre * $put _ | $;?\(^\s*$\)\@!?+1,$d
+augroup end
+
+" sort
+vnoremap <Leader>s :sort<cr>
+
+" save
+augroup insert_leave
+  autocmd!
+  autocmd InsertLeave * write
+augroup END
+
+" ctrlp
+" ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']

@@ -21,6 +21,8 @@ alias tswitch='tmux switch -t'
 
 alias o='open .'
 
+alias v='vim .'
+
 # Git
 alias gtheirs='git checkout --theirs'
 alias gours='git checkout --ours'
