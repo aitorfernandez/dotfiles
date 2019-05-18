@@ -93,3 +93,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " snippes
 let g:UltiSnipsExpandTrigger      ='<c-j>'
 let g:UltiSnipsJumpForwardTrigger ='<c-j>'
+
+" ack
+nnoremap <Leader>a :Ack!<Space>
+
+" ale
+let g:ale_sign_column_always         =1
+let g:airline#extensions#ale#enabled =1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
