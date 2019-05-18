@@ -2,8 +2,7 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-set background=dark
-colorscheme solarized
+colorscheme iceberg
 
 let $v = $HOME.('/.vim')
 
@@ -19,17 +18,6 @@ set number
 " Always show statusline
 set laststatus =2
 set display    =lastline
-
-" netrw banner, I like the banner
-let g:netrw_banner          =1
-" tree-view
-let g:netrw_liststyle       =3
-" directories on the top, files below
-let g:netrw_sort_sequence   ='[\/]$,*'
-
-" snippes
-let g:UltiSnipsExpandTrigger      ='<c-j>'
-let g:UltiSnipsJumpForwardTrigger ='<c-j>'
 
 " Show hidden chars
 set listchars=tab:→\ ,eol:¬
@@ -61,9 +49,6 @@ augroup highlight_search
 augroup END
 nnoremap <leader>/ :nohlsearch<cr>
 
-nnoremap <space> :bnext<cr>
-nnoremap <bs> :bprev<cr>
-
 " Wildmenu
 set wildmenu                   " Command line autocompletion
 set wildmode=list:longest,full " Shows all the options
@@ -89,6 +74,22 @@ augroup insert_leave
   autocmd InsertLeave * write
 augroup END
 
+" netrw
+let g:netrw_banner        =0
+" set the default listing style
+let g:netrw_liststyle     =1
+" directories on the top, files below
+let g:netrw_sort_sequence ='[\/]$,*'
+
+nnoremap <space> :bnext<cr>
+nnoremap <bs> :bprev<cr>
+
+" bundles
+
 " ctrlp
 " ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" snippes
+let g:UltiSnipsExpandTrigger      ='<c-j>'
+let g:UltiSnipsJumpForwardTrigger ='<c-j>'
