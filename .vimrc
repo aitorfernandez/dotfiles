@@ -83,6 +83,11 @@ let g:netrw_sort_sequence ='[\/]$,*'
 
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
+nnoremap <Leader>- :E<cr>
+nnoremap <Plug>(NetrwUp) :e.<cr>
+if empty(maparg('-', 'n'))
+  nmap - <Plug>(NetrwUp)
+endif
 
 " bundles
 
