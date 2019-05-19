@@ -81,8 +81,8 @@ let g:netrw_liststyle     =1
 " directories on the top, files below
 let g:netrw_sort_sequence ='[\/]$,*'
 
-nnoremap <space> :bnext<cr>
-nnoremap <bs> :bprev<cr>
+nnoremap <Space> :bnext<cr>
+nnoremap <Bs> :bprev<cr>
 nnoremap <Leader>- :E<cr>
 nnoremap <Plug>(NetrwUp) :e.<cr>
 if empty(maparg('-', 'n'))
@@ -96,8 +96,8 @@ endif
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " snippes
-let g:UltiSnipsExpandTrigger      ='<c-j>'
-let g:UltiSnipsJumpForwardTrigger ='<c-j>'
+let g:UltiSnipsExpandTrigger      ='<Tab>'
+let g:UltiSnipsJumpForwardTrigger ='<Tab>'
 
 " ack
 nnoremap <Leader>a :Ack!<Space>
