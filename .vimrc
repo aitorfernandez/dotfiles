@@ -80,6 +80,7 @@ let g:netrw_banner        =0
 let g:netrw_liststyle     =1
 " directories on the top, files below
 let g:netrw_sort_sequence ='[\/]$,*'
+let g:netrw_preview       =1
 
 nnoremap <Space> :bnext<cr>
 nnoremap <Bs> :bprev<cr>
