@@ -108,10 +108,22 @@ nnoremap <Leader>a :Ack!<Space>
 let g:ale_sign_column_always         =1
 let g:airline#extensions#ale#enabled =1
 let g:ale_linters = {
-\  'javascript': ['eslint'],
+\   'javascript': ['eslint']
 \ }
 
 " lightline.vim
 let g:lightline = {
-\  'colorscheme': 'seoul256',
+\   'colorscheme': 'seoul256',
+\   'active': {
+\     'left': [ [ 'mode', 'paste' ],
+\               [ 'gitbranch', 'readonly', 'modified' ] ]
+\   },
+\   'component_function': {
+\     'gitbranch': 'fugitive#head'
+\   }
 \ }
+
+" vim-fugitive
+nnoremap <Leader>gs :Gstatus<cr>
+nnoremap <Leader>gc :Gcommit<cr>
+nnoremap <Leader>gd :Gdiff<cr>
