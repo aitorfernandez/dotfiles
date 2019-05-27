@@ -81,6 +81,7 @@ let g:netrw_liststyle     =1
 " directories on the top, files below
 let g:netrw_sort_sequence ='[\/]$,*'
 let g:netrw_preview       =1
+let g:netrw_winsize       =18
 
 nnoremap <Space> :bnext<cr>
 nnoremap <Bs> :bprev<cr>
@@ -107,5 +108,10 @@ nnoremap <Leader>a :Ack!<Space>
 let g:ale_sign_column_always         =1
 let g:airline#extensions#ale#enabled =1
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\}
+\  'javascript': ['eslint'],
+\ }
+
+" lightline.vim
+let g:lightline = {
+\  'colorscheme': 'seoul256',
+\ }
