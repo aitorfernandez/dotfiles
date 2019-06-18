@@ -47,7 +47,7 @@ augroup highlight_search
   autocmd InsertEnter * :setlocal nohlsearch
   autocmd InsertLeave * :setlocal hlsearch
 augroup END
-nnoremap <leader>/ :nohlsearch<cr>
+nnoremap <leader>/ :nohlsearch<CR>
 
 " Wildmenu
 set wildmenu                   " Command line autocompletion
@@ -66,12 +66,12 @@ augroup trim_whitespace
 augroup end
 
 " sort
-vnoremap <Leader>s :sort<cr>
+vnoremap <Leader>s :sort<CR>
 
 " save
 augroup insert_leave
   autocmd!
-  autocmd InsertLeave * write
+  autocmd InsertLeave * silent! update
 augroup END
 
 " netrw
@@ -83,10 +83,10 @@ let g:netrw_sort_sequence ='[\/]$,*'
 let g:netrw_preview       =1
 let g:netrw_winsize       =18
 
-nnoremap <Space> :bnext<cr>
-nnoremap <Bs> :bprev<cr>
-nnoremap <Leader>- :E<cr>
-nnoremap <Plug>(NetrwUp) :e.<cr>
+nnoremap <Space> :bnext<CR>
+nnoremap <Bs> :bprev<CR>
+nnoremap <Leader>- :E<CR>
+nnoremap <Plug>(NetrwUp) :e.<CR>
 if empty(maparg('-', 'n'))
   nmap - <Plug>(NetrwUp)
 endif
@@ -124,6 +124,6 @@ let g:lightline = {
 \ }
 
 " vim-fugitive
-nnoremap <Leader>gs :Gstatus<cr>
-nnoremap <Leader>gc :Gcommit<cr>
-nnoremap <Leader>gd :Gdiff<cr>
+nnoremap <Leader>gs :Gstatus<CR>
+nnoremap <Leader>gc :Gcommit<CR>
+nnoremap <Leader>gd :Gdiff<CR>
