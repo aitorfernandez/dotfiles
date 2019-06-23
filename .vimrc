@@ -9,7 +9,8 @@ let $v = $HOME.('/.vim')
 set updatetime=100
 
 " zsh
-set shell=/bin/zsh
+" set shell=/bin/zsh " makes my vim really slow
+set shell=/bin/bash
 
 " powerful backspace
 set backspace=indent,eol,start
