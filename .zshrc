@@ -5,10 +5,11 @@ ZSH_THEME="odin"
 DEFAULT_USER="aitorfernandez"
 
 plugins=(
+  cargo
   git
   zsh-syntax-highlighting
 )
 
-export PATH=$PATH:/usr/local/sbin
+export PATH=$PATH:/usr/local/sbin:$HOME/.cargo/bin
 
 source $ZSH/oh-my-zsh.sh

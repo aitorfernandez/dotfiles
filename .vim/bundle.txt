@@ -7,6 +7,7 @@
 - git@github.com:mileszs/ack.vim.git
 - git@github.com:mxw/vim-jsx.git
 - git@github.com:pangloss/vim-javascript.git
+- git@github.com:rust-lang/rust.vim.git
 - git@github.com:SirVer/ultisnips.git
 - git@github.com:tpope/vim-commentary.git
 - git@github.com:tpope/vim-fugitive.git

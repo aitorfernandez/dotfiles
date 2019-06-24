@@ -86,6 +86,7 @@ let g:netrw_sort_sequence ='[\/]$,*'
 let g:netrw_preview       =1
 let g:netrw_winsize       =50
 let g:netrw_altv          =1
+let g:netrw_localrmdir    ='rm -r'
 
 nnoremap <Space> :bnext<CR>
 nnoremap <Bs> :bprev<CR>
