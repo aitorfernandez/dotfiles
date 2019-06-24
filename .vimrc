@@ -32,6 +32,8 @@ set shiftwidth  =2
 set softtabstop =2
 " dont't break words when wrapping text
 set linebreak
+" fold
+set foldlevel=99
 
 set backup
 set backupdir =$v/tmp/backup/
@@ -82,7 +84,8 @@ let g:netrw_liststyle     =1
 " directories on the top, files below
 let g:netrw_sort_sequence ='[\/]$,*'
 let g:netrw_preview       =1
-let g:netrw_winsize       =18
+let g:netrw_winsize       =50
+let g:netrw_altv          =1
 
 nnoremap <Space> :bnext<CR>
 nnoremap <Bs> :bprev<CR>
@@ -91,6 +94,15 @@ nnoremap <Plug>(NetrwUp) :e.<CR>
 if empty(maparg('-', 'n'))
   nmap - <Plug>(NetrwUp)
 endif
+
+vnoremap > >gv
+vnoremap < <gv
+
+augroup filetype_foldmethod
+  autocmd!
+  autocmd FileType vim :setlocal foldmethod=marker
+  autocmd FileType javascript,css,json :setlocal foldmethod=syntax
+augroup END
 
 " bundles
 
