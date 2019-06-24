@@ -67,7 +67,7 @@ augroup trim_whitespace
 augroup end
 
 " sort
-vnoremap <Leader>s :sort<CR>
+vnoremap <Leader>s :sort i<CR>
 
 " save
 augroup insert_leave
