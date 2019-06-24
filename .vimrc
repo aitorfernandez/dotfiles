@@ -104,6 +104,12 @@ augroup filetype_foldmethod
   autocmd FileType javascript,css,json :setlocal foldmethod=syntax
 augroup END
 
+" system clipboard
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
 " bundles
 
 " ctrlp
