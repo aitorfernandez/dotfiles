@@ -6,7 +6,7 @@ colorscheme iceberg
 
 let $v = $HOME.('/.vim')
 
-set updatetime=100
+set updatetime =100
 
 " zsh
 " set shell=/bin/zsh " makes my vim really slow
@@ -33,7 +33,7 @@ set softtabstop =2
 " dont't break words when wrapping text
 set linebreak
 " fold
-set foldlevel=99
+set foldlevel =99
 
 set backup
 set backupdir =$v/tmp/backup/
@@ -88,6 +88,7 @@ let g:netrw_winsize       =50
 let g:netrw_altv          =1
 let g:netrw_localrmdir    ='rm -r'
 
+nnoremap <Leader><Space> :Vex<CR>
 nnoremap <Space> :bnext<CR>
 nnoremap <Bs> :bprev<CR>
 nnoremap <Leader>- :E<CR>
@@ -106,10 +107,12 @@ augroup filetype_foldmethod
 augroup END
 
 " system clipboard
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
+nnoremap <Leader>y "*y
+nnoremap <Leader>p "*p
+nnoremap <Leader>Y "+y
+nnoremap <Leader>P "+p
+
+nnoremap <Leader>q :q<CR>
 
 " bundles
 
@@ -128,8 +131,10 @@ nnoremap <Leader>a :Ack!<Space>
 let g:ale_sign_column_always         =1
 let g:airline#extensions#ale#enabled =1
 let g:ale_linters = {
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\   'rust': ['rls']
 \ }
+let g:ale_rust_rls_toolchain = 'stable'
 
 " lightline.vim
 let g:lightline = {
@@ -149,3 +154,6 @@ nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
 let g:fugitive_autoreload_status =0
+
+" rust
+let g:rustfmt_autosave =1
