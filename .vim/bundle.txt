@@ -4,6 +4,7 @@
 - git@github.com:itchyny/lightline.vim.git
 - git@github.com:kien/ctrlp.vim.git
 - git@github.com:kshenoy/vim-signature.git
+- git@github.com:majutsushi/tagbar.git
 - git@github.com:mileszs/ack.vim.git
 - git@github.com:mxw/vim-jsx.git
 - git@github.com:pangloss/vim-javascript.git

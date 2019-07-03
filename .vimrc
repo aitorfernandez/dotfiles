@@ -154,6 +154,3 @@ nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
 let g:fugitive_autoreload_status =0
-
-" rust
-let g:rustfmt_autosave =1
