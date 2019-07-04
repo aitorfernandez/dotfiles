@@ -106,6 +106,12 @@ augroup file_type_foldmethod
   autocmd FileType javascript,css,json :setlocal foldmethod=syntax
 augroup END
 
+" tags
+set tags=.tags
+augroup file_type_ctags
+  autocmd FileType javascript command! Ctags !ctags --languages=javascript -f .tags -R --exclude=node_modules --exclude=.git .
+augroup END
+
 " system clipboard
 nnoremap <Leader>y "*y
 nnoremap <Leader>p "*p
