@@ -121,8 +121,9 @@ nnoremap <Leader>q :q<CR>
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " snippes
-let g:UltiSnipsExpandTrigger      ='<Tab>'
-let g:UltiSnipsJumpForwardTrigger ='<Tab>'
+let g:UltiSnipsExpandTrigger       ='<c-j>'
+let g:UltiSnipsJumpForwardTrigger  ='<c-j>'
+let g:UltiSnipsJumpBackwardTrigger ='<c-k>'
 
 " ack
 nnoremap <Leader>a :Ack!<Space>
@@ -154,3 +155,8 @@ nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
 let g:fugitive_autoreload_status =0
+
+" YCM
+set completeopt-=preview
+let g:ycm_add_preview_to_completeopt =0
+" let g:loaded_youcompleteme         =1
