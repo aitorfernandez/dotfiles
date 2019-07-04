@@ -63,7 +63,7 @@ fun! TrimWhitespace()
   call winrestview(l:save)
 endfun
 
-augroup trim_whitespace
+augroup buf_write_pre_trim_whitespace
   autocmd!
   autocmd BufWritePre * :call TrimWhitespace()
 augroup end
@@ -72,7 +72,7 @@ augroup end
 vnoremap <Leader>s :sort i<CR>
 
 " save
-augroup insert_leave
+augroup insert_leave_update
   autocmd!
   autocmd InsertLeave * silent! update
 augroup END
@@ -100,7 +100,7 @@ endif
 vnoremap > >gv
 vnoremap < <gv
 
-augroup filetype_foldmethod
+augroup file_type_foldmethod
   autocmd!
   autocmd FileType vim :setlocal foldmethod=marker
   autocmd FileType javascript,css,json :setlocal foldmethod=syntax
