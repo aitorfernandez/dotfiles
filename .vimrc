@@ -53,8 +53,10 @@ augroup END
 nnoremap <leader>/ :nohlsearch<CR>
 
 " Wildmenu
-set wildmenu                   " Command line autocompletion
-set wildmode=list:longest,full " Shows all the options
+set wildmenu                            " Command line autocompletion
+set wildmode   =list:longest,full       " Shows all the options
+set wildignore+=*.sw?                   " Vim swap files
+set wildignore+=*/node_modules/*,*/dist " JS
 
 " trailing whitespace
 fun! TrimWhitespace()
@@ -72,10 +74,10 @@ augroup end
 vnoremap <Leader>s :sort i<CR>
 
 " save
-augroup insert_leave_update
-  autocmd!
-  autocmd InsertLeave * silent! update
-augroup END
+" augroup insert_leave_update
+"   autocmd!
+"   autocmd InsertLeave * silent! update
+" augroup END
 
 " netrw
 let g:netrw_banner        =0
@@ -102,14 +104,15 @@ vnoremap < <gv
 
 augroup file_type_foldmethod
   autocmd!
-  autocmd FileType vim :setlocal foldmethod=marker
+  " autocmd FileType vim :setlocal foldmethod=marker
   autocmd FileType javascript,css,json :setlocal foldmethod=syntax
 augroup END
 
 " tags
 set tags=.tags
 augroup file_type_ctags
-  autocmd FileType javascript command! Ctags !ctags --languages=javascript -f .tags -R --exclude=node_modules --exclude=.git .
+  autocmd FileType netrw,javascript command! Ctags !ctags
+    \ --languages=javascript --exclude=node_modules --exclude=.git -f .tags -R .
 augroup END
 
 " system clipboard
@@ -124,7 +127,10 @@ nnoremap <Leader>q :q<CR>
 
 " ctrlp
 " ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_user_command  = ['cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|yarn.lock'
+
+nnoremap <c-t> :CtrlPTag<cr>
 
 " snippes
 let g:UltiSnipsExpandTrigger       ='<c-j>'
@@ -165,4 +171,4 @@ let g:fugitive_autoreload_status =0
 " YCM
 set completeopt-=preview
 let g:ycm_add_preview_to_completeopt =0
-" let g:loaded_youcompleteme         =1
+let g:loaded_youcompleteme           =1
