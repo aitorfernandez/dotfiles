@@ -81,10 +81,11 @@ vnoremap <Leader>s :sort i<CR>
 
 " netrw
 let g:netrw_banner        =0
-" set the default listing style
+" set the default listing style, Long, one file per line with file size and time stamp
 let g:netrw_liststyle     =1
 " directories on the top, files below
 let g:netrw_sort_sequence ='[\/]$,*'
+" keep the cursor in the netrw window
 let g:netrw_preview       =1
 let g:netrw_winsize       =50
 let g:netrw_altv          =1
@@ -116,12 +117,13 @@ augroup file_type_ctags
 augroup END
 
 " system clipboard
-nnoremap <Leader>y "*y
-nnoremap <Leader>p "*p
-nnoremap <Leader>Y "+y
-nnoremap <Leader>P "+p
+" nnoremap <Leader>y "*y
+" nnoremap <Leader>p "*p
+nnoremap <Leader>y "+y
+nnoremap <Leader>p "+p
 
 nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
 
 " bundles
 
