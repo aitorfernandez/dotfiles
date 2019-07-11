@@ -12,6 +12,15 @@ set updatetime =100
 " set shell=/bin/zsh " makes my vim really slow
 set shell=/bin/bash
 
+" autocompletion
+" . current buffer
+" w buffers from other windows
+" b buffers from the buffer list
+" u buffers that have been unloaded from the buffer list
+" t tag completion
+set complete    =.,w,b,u,t
+set completeopt =noselect,menu,longest
+
 " powerful backspace
 set backspace=indent,eol,start
 " line numbers
@@ -117,13 +126,15 @@ augroup file_type_ctags
 augroup END
 
 " system clipboard
-" nnoremap <Leader>y "*y
-" nnoremap <Leader>p "*p
 noremap <Leader>y "+y
 noremap <Leader>p "+p
 
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
+
+nnoremap <Leader>ev :e $MYVIMRC<CR>
+
+nnoremap <Leader>o :!open .<CR>
 
 " bundles
 
@@ -169,8 +180,3 @@ nnoremap <Leader>gc :Gcommit<CR>
 nnoremap <Leader>gd :Gdiff<CR>
 
 let g:fugitive_autoreload_status =0
-
-" YCM
-set completeopt-=preview
-let g:ycm_add_preview_to_completeopt =0
-let g:loaded_youcompleteme           =1
