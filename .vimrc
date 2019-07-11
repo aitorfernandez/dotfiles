@@ -2,9 +2,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-
-
-
 colorscheme iceberg
 
 let $v = $HOME.('/.vim')
@@ -22,7 +19,7 @@ set shell=/bin/bash
 " u buffers that have been unloaded from the buffer list
 " t tag completion
 set complete    =.,w,b,u,t
-set completeopt =noselect,menu,longest
+set completeopt =menu,longest
 
 " powerful backspace
 set backspace=indent,eol,start
