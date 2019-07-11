@@ -2,6 +2,9 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
+
+
+
 colorscheme iceberg
 
 let $v = $HOME.('/.vim')
@@ -59,7 +62,7 @@ augroup highlight_search
   autocmd InsertEnter * :setlocal nohlsearch
   autocmd InsertLeave * :setlocal hlsearch
 augroup END
-nnoremap <leader>/ :nohlsearch<CR>
+nnoremap <leader>/ :nohlsearch<cr>
 
 " Wildmenu
 set wildmenu                            " Command line autocompletion
@@ -80,7 +83,7 @@ augroup buf_write_pre_trim_whitespace
 augroup end
 
 " sort
-vnoremap <Leader>s :sort i<CR>
+vnoremap <leader>s :sort i<cr>
 
 " save
 " augroup insert_leave_update
@@ -100,17 +103,15 @@ let g:netrw_winsize       =50
 let g:netrw_altv          =1
 let g:netrw_localrmdir    ='rm -r'
 
-nnoremap <Leader><Space> :Vex<CR>
-nnoremap <Space> :bnext<CR>
-nnoremap <Bs> :bprev<CR>
-nnoremap <Leader>- :E<CR>
-nnoremap <Plug>(NetrwUp) :e.<CR>
+nnoremap <leader><space> :Vex<cr>
+nnoremap <space> :bnext<cr>
+nnoremap <bs> :bprev<cr>
+nnoremap <leader>- :E<cr>
+" from tpope/vim-vinegar
+nnoremap <plug>(NetrwUp) :e.<cr>
 if empty(maparg('-', 'n'))
-  nmap - <Plug>(NetrwUp)
+  nmap - <plug>(NetrwUp)
 endif
-
-vnoremap > >gv
-vnoremap < <gv
 
 augroup file_type_foldmethod
   autocmd!
@@ -125,16 +126,24 @@ augroup file_type_ctags
     \ --languages=javascript --exclude=node_modules --exclude=.git -f .tags -R .
 augroup END
 
+" more mappings
+
+vnoremap > >gv
+vnoremap < <gv
+
 " system clipboard
-noremap <Leader>y "+y
-noremap <Leader>p "+p
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
 
-nnoremap <Leader>q :q<CR>
-nnoremap <Leader>w :w<CR>
+nnoremap <leader>q :q<cr>
+nnoremap <leader>w :w<cr>
 
-nnoremap <Leader>ev :e $MYVIMRC<CR>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
-nnoremap <Leader>o :!open .<CR>
+nnoremap <leader>o :!open .<cr>
+
+inoremap jk <esc>
 
 " bundles
 
@@ -151,7 +160,7 @@ let g:UltiSnipsJumpForwardTrigger  ='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger ='<c-k>'
 
 " ack
-nnoremap <Leader>a :Ack!<Space>
+nnoremap <leader>a :Ack!<space>
 
 " ale
 let g:ale_sign_column_always         =1
@@ -175,8 +184,8 @@ let g:lightline = {
 \ }
 
 " vim-fugitive
-nnoremap <Leader>gs :Gstatus<CR>
-nnoremap <Leader>gc :Gcommit<CR>
-nnoremap <Leader>gd :Gdiff<CR>
+nnoremap <leader>gs :Gstatus<cr>
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gd :Gdiff<cr>
 
 let g:fugitive_autoreload_status =0
