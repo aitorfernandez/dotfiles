@@ -119,8 +119,8 @@ augroup END
 " system clipboard
 " nnoremap <Leader>y "*y
 " nnoremap <Leader>p "*p
-nnoremap <Leader>y "+y
-nnoremap <Leader>p "+p
+noremap <Leader>y "+y
+noremap <Leader>p "+p
 
 nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
