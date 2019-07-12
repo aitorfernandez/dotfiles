@@ -3,12 +3,11 @@
 - git@github.com:honza/vim-snippets.git
 - git@github.com:itchyny/lightline.vim.git
 - git@github.com:kshenoy/vim-signature.git
-- git@github.com:mileszs/ack.vim.git
+- git@github.com:mhinz/vim-grepper.git
 - git@github.com:mxw/vim-jsx.git
 - git@github.com:pangloss/vim-javascript.git
 - git@github.com:rust-lang/rust.vim.git
 - git@github.com:SirVer/ultisnips.git
 - git@github.com:tpope/vim-commentary.git
 - git@github.com:tpope/vim-fugitive.git
-- git@github.com:tpope/vim-scriptease.git
 - git@github.com:w0rp/ale.git

@@ -153,9 +153,6 @@ let g:UltiSnipsExpandTrigger       ='<c-j>'
 let g:UltiSnipsJumpForwardTrigger  ='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger ='<c-k>'
 
-" ack
-nnoremap <leader>a :Ack!<space>
-
 " ale
 let g:ale_sign_column_always         =1
 let g:airline#extensions#ale#enabled =1
@@ -183,3 +180,21 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
 
 let g:fugitive_autoreload_status =0
+
+" grepper
+runtime plugin/grepper.vim
+
+let g:grepper.highlight    =1
+let g:grepper.tools        =['ag', 'grep', 'git']
+" quote the query automatically
+let g:grepper.prompt_quote =1
+" the short grep command
+let g:grepper.prompt_text  ='$t> '
+let g:grepper.ag.grepprg  .=
+\   ' --ignore-dir *.lock --ignore-dir node_modules'
+
+nnoremap <silent><leader>sa :Grepper -open -switch -prompt<cr>
+nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
+
+" nmap sz <plug>(GrepperOperator)
+" xmap sz <plug>(GrepperOperator)
