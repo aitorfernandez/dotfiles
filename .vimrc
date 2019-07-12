@@ -12,6 +12,8 @@ set updatetime =100
 " set shell=/bin/zsh " makes my vim really slow
 set shell=/bin/bash
 
+set path=.,**
+
 " autocompletion
 " . current buffer
 " w buffers from other windows
@@ -42,7 +44,7 @@ set softtabstop =2
 " dont't break words when wrapping text
 set linebreak
 " fold
-set foldlevel =99
+set foldlevel   =99
 
 set backup
 set backupdir =$v/tmp/backup/
