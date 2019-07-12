@@ -142,6 +142,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>o :!open .<cr>
 
+nnoremap <leader>f :find<space>
+
 inoremap jk <esc>
 
 " bundles
