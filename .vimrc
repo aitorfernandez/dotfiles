@@ -12,7 +12,7 @@ set updatetime =100
 " set shell=/bin/zsh " makes my vim really slow
 set shell=/bin/bash
 
-set path=.,**
+set path=.,,**
 
 " autocompletion
 " . current buffer
@@ -145,13 +145,6 @@ nnoremap <leader>o :!open .<cr>
 inoremap jk <esc>
 
 " bundles
-
-" ctrlp
-" ignore files in .gitignore
-let g:ctrlp_user_command  = ['cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|yarn.lock'
-
-nnoremap <c-t> :CtrlPTag<cr>
 
 " snippes
 let g:UltiSnipsExpandTrigger       ='<c-j>'

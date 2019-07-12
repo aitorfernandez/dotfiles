@@ -2,7 +2,6 @@
 - git@github.com:cocopon/iceberg.vim.git
 - git@github.com:honza/vim-snippets.git
 - git@github.com:itchyny/lightline.vim.git
-- git@github.com:kien/ctrlp.vim.git
 - git@github.com:kshenoy/vim-signature.git
 - git@github.com:mileszs/ack.vim.git
 - git@github.com:mxw/vim-jsx.git
