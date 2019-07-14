@@ -125,7 +125,7 @@ augroup file_type_ctags
     \ --languages=javascript --exclude=node_modules --exclude=.git -f .tags -R .
 augroup END
 
-" more mappings
+" my mappings :)
 
 vnoremap > >gv
 vnoremap < <gv
@@ -149,9 +149,9 @@ inoremap jk <esc>
 " bundles
 
 " snippes
-let g:UltiSnipsExpandTrigger       ='<c-j>'
-let g:UltiSnipsJumpForwardTrigger  ='<c-j>'
-let g:UltiSnipsJumpBackwardTrigger ='<c-k>'
+let g:UltiSnipsExpandTrigger       ='<tab>'
+let g:UltiSnipsJumpForwardTrigger  ='<tab>'
+let g:UltiSnipsJumpBackwardTrigger ='<s-tab>'
 
 " ale
 let g:ale_sign_column_always         =1
