@@ -27,6 +27,7 @@ set completeopt =menu,longest
 set backspace=indent,eol,start
 " line numbers
 set number
+set relativenumber
 " Always show statusline
 set laststatus =2
 set display    =lastline
@@ -148,7 +149,7 @@ inoremap jk <esc>
 
 " bundles
 
-" snippes
+" snippets
 let g:UltiSnipsExpandTrigger       ='<tab>'
 let g:UltiSnipsJumpForwardTrigger  ='<tab>'
 let g:UltiSnipsJumpBackwardTrigger ='<s-tab>'
@@ -196,5 +197,5 @@ let g:grepper.ag.grepprg  .=
 nnoremap <silent><leader>sa :Grepper -open -switch -prompt<cr>
 nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
 
-" nmap sz <plug>(GrepperOperator)
-" xmap sz <plug>(GrepperOperator)
+nmap sz <plug>(GrepperOperator)
+xmap sz <plug>(GrepperOperator)
