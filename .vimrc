@@ -136,7 +136,7 @@ nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 
 nnoremap <leader>q :q<cr>
-nnoremap <leader>w :w<cr>
+nnoremap <leader>w :w!<cr>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
