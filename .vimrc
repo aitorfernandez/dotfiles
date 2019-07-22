@@ -1,8 +1,26 @@
-execute pathogen#infect()
+packadd minpac
+call minpac#init()
+
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+call minpac#add('airblade/vim-gitgutter')
+call minpac#add('cocopon/iceberg.vim')
+call minpac#add('honza/vim-snippets')
+call minpac#add('itchyny/lightline.vim')
+call minpac#add('kshenoy/vim-signature')
+call minpac#add('mhinz/vim-grepper')
+call minpac#add('mxw/vim-jsx')
+call minpac#add('pangloss/vim-javascript')
+call minpac#add('rust-lang/rust.vim')
+call minpac#add('SirVer/ultisnips')
+call minpac#add('tpope/vim-commentary')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('w0rp/ale')
+
+packloadall
+
 syntax on
 filetype plugin indent on
-
-colorscheme iceberg
 
 let $v = $HOME.('/.vim')
 
@@ -126,7 +144,7 @@ augroup file_type_ctags
     \ --languages=javascript --exclude=node_modules --exclude=.git -f .tags -R .
 augroup END
 
-" my mappings :)
+" mappings
 
 vnoremap > >gv
 vnoremap < <gv
@@ -147,7 +165,15 @@ nnoremap <leader>f :find<space>
 
 inoremap jk <esc>
 
-" bundles
+" repeat in visual mode
+xnoremap . :norm.<cr>
+
+" packages
+
+" minpac
+command! PackClean call minpac#clean()
+command! PackStatus call minpac#status()
+command! PackUpdate call minpac#update()
 
 " snippets
 let g:UltiSnipsExpandTrigger       ='<tab>'
@@ -199,3 +225,6 @@ nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
 
 nmap sz <plug>(GrepperOperator)
 xmap sz <plug>(GrepperOperator)
+
+" colorscheme at the end of the file to avoid color issues
+colorscheme iceberg
