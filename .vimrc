@@ -55,7 +55,7 @@ set listchars=tab:→\ ,eol:¬
 
 " space instead of tabs
 set expandtab
-" tab==four spaces
+" tab==two spaces
 set tabstop     =2
 " spaces for auto-indent
 set shiftwidth  =2
