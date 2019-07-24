@@ -163,6 +163,11 @@ nnoremap <leader>o :!open .<cr>
 
 nnoremap <leader>f :find<space>
 
+" tabs
+for i in range(1, 9)
+  execute 'nnoremap <leader>'.i.' '.i.'gt<cr>'
+endfor
+
 inoremap jk <esc>
 
 " repeat in visual mode
