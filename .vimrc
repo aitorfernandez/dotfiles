@@ -167,6 +167,7 @@ nnoremap <leader>f :find<space>
 for i in range(1, 9)
   execute 'nnoremap <leader>'.i.' '.i.'gt<cr>'
 endfor
+nnoremap <leader>t :tabnew<space>
 
 inoremap jk <esc>
 
