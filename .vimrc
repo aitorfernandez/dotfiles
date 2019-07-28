@@ -173,6 +173,12 @@ nnoremap <leader>t :tabnew<space>
 
 inoremap jk <esc>
 
+" 😱
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
+
 " repeat in visual mode
 xnoremap . :norm.<cr>
 
