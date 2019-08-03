@@ -143,7 +143,7 @@ augroup END
 set tags=.tags
 augroup file_type_ctags
   autocmd FileType netrw,javascript command! Ctags !ctags
-    \ --languages=javascript --exclude=node_modules --exclude=.git -f .tags -R .
+    \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
 augroup END
 
 " mappings
