@@ -165,6 +165,8 @@ nnoremap <leader>o :!open .<cr>
 
 nnoremap <leader>f :find<space>
 
+nnoremap <leader>l :set list!<cr>
+
 " tabs
 for i in range(1, 9)
   execute 'nnoremap <leader>'.i.' '.i.'gt<cr>'
