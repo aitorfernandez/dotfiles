@@ -34,6 +34,9 @@ set shell=/bin/bash
 
 set path=.,,**
 
+" make Vim more liberal about hidden buffers
+set hidden
+
 " autocompletion
 " . current buffer
 " w buffers from other windows
@@ -166,6 +169,8 @@ nnoremap <leader>o :!open .<cr>
 nnoremap <leader>f :find<space>
 
 nnoremap <leader>l :set list!<cr>
+
+nnoremap <leader>ls :ls<cr>:b<space>
 
 " tabs
 for i in range(1, 9)
