@@ -4,6 +4,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
+call minpac#add('ap/vim-css-color')
 call minpac#add('cocopon/iceberg.vim')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')

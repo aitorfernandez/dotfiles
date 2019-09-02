@@ -13,3 +13,5 @@ plugins=(
 export PATH=$PATH:/usr/local/sbin:$HOME/.cargo/bin
 
 source $ZSH/oh-my-zsh.sh
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
