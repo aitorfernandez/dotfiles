@@ -71,6 +71,9 @@ set linebreak
 " fold
 set foldlevel   =99
 
+set scrolloff    =3
+set sidescrolloff=5
+
 set backup
 set backupdir =$v/tmp/backup/
 set directory =$v/tmp/swap/
@@ -181,11 +184,10 @@ nnoremap <leader>t :tabnew<space>
 
 inoremap jk <esc>
 
-" 😱
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
 
 " repeat in visual mode
 xnoremap . :norm.<cr>
