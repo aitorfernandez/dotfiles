@@ -5,11 +5,11 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('ap/vim-css-color')
-call minpac#add('cocopon/iceberg.vim')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('mhinz/vim-grepper')
+call minpac#add('morhetz/gruvbox')
 call minpac#add('mxw/vim-jsx')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('rust-lang/rust.vim')
@@ -252,4 +252,5 @@ nmap sz <plug>(GrepperOperator)
 xmap sz <plug>(GrepperOperator)
 
 " colorscheme at the end of the file to avoid color issues
-colorscheme iceberg
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'medium'
