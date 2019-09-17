@@ -140,10 +140,11 @@ if empty(maparg('-', 'n'))
   nmap - <plug>(NetrwUp)
 endif
 
-augroup file_type_foldmethod
+augroup file_type_language_characteristics
   autocmd!
   " autocmd FileType vim :setlocal foldmethod=marker
   autocmd FileType javascript,css,json :setlocal foldmethod=syntax
+  autocmd FileType javascript,html :setlocal nowrap
 augroup END
 
 " tags
