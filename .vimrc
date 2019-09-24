@@ -173,7 +173,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>o :!open .<cr>
 
-nnoremap <leader>f :find<space>
+nnoremap <leader>f :find **/*<C-z>
+nnoremap <leader>e :e **/*<C-z>
 
 nnoremap <leader>l :set list!<cr>
 
