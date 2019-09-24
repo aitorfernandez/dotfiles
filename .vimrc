@@ -150,6 +150,8 @@ augroup END
 " tags
 set tags=.tags
 augroup file_type_ctags
+  autocmd FileType python command! Ctags !ctags
+    \ --exclude=**/.tox --exclude=**/.venv --languages=python -f .tags -R $(python -c "import sys; print(' '.join(sys.path))")
   autocmd FileType netrw,javascript command! Ctags !ctags
     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
 augroup END
@@ -244,10 +246,11 @@ let g:grepper.prompt_quote =1
 " the short grep command
 let g:grepper.prompt_text  ='$t> '
 let g:grepper.ag.grepprg  .=
-\   ' --ignore-dir *.lock --ignore-dir node_modules'
+  \ ' --ignore-dir *.lock --ignore-dir node_modules --ignore-dir .venv --ignore-dir *.egg-info'
 
-nnoremap <silent><leader>sa :Grepper -open -switch -prompt<cr>
 nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
+nnoremap <silent><leader>g :Grepper -tool git -noopen -jump<cr>
+nnoremap <silent><leader>sa :Grepper -open -switch -prompt<cr>
 
 nmap sz <plug>(GrepperOperator)
 xmap sz <plug>(GrepperOperator)
