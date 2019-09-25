@@ -97,6 +97,8 @@ set wildmode   =list:longest,full       " Shows all the options
 set wildignore+=*.sw?                   " Vim swap files
 set wildignore+=*/node_modules/*,*/dist " JS
 
+set wildcharm=<C-z>
+
 " trailing whitespace
 fun! TrimWhitespace()
   let l:save = winsaveview()
