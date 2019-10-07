@@ -44,7 +44,7 @@ set hidden
 " b buffers from the buffer list
 " u buffers that have been unloaded from the buffer list
 " t tag completion
-set complete    =.,w,b,u,t
+set complete    =.,w,b,u,t,kspell
 set completeopt =menu,longest
 
 " powerful backspace
@@ -66,7 +66,7 @@ set tabstop     =2
 " spaces for auto-indent
 set shiftwidth  =2
 set softtabstop =2
-" dont't break words when wrapping text
+" don't break words when wrapping text
 set linebreak
 " fold
 set foldlevel   =99
@@ -81,9 +81,9 @@ set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
 
-" Searching
+" searching
 set incsearch hlsearch smartcase ignorecase
-" Turn off highlighting in insert mode, and turn back on again when leaving
+" turn off highlighting in insert mode, and turn back on again when leaving
 augroup highlight_search
   autocmd!
   autocmd InsertEnter * :setlocal nohlsearch
@@ -92,12 +92,13 @@ augroup END
 nnoremap <leader>/ :nohlsearch<cr>
 
 " spelling
+" :setlocal spell
 augroup spell
   autocmd!
-  autocmd FileType markdown setlocal spell
+  autocmd FileType latex,tex,markdown setlocal spell
 augroup END
 
-" Wildmenu
+" wildmenu
 set wildmenu                            " Command line autocompletion
 set wildmode   =list:longest,full       " Shows all the options
 set wildignore+=*.sw?                   " Vim swap files
