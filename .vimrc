@@ -91,6 +91,12 @@ augroup highlight_search
 augroup END
 nnoremap <leader>/ :nohlsearch<cr>
 
+" spelling
+augroup spell
+  autocmd!
+  autocmd FileType markdown setlocal spell
+augroup END
+
 " Wildmenu
 set wildmenu                            " Command line autocompletion
 set wildmode   =list:longest,full       " Shows all the options
