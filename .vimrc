@@ -160,7 +160,7 @@ augroup END
 set tags=.tags
 augroup file_type_ctags
   autocmd FileType python command! Ctags !ctags
-    \ --exclude=**/.tox --exclude=**/.venv --languages=python -f .tags -R $(python -c "import sys; print(' '.join(sys.path))")
+    \ --languages=python --exclude=**/.tox --exclude=**/.venv --exclude=.git -f .tags -R .
   autocmd FileType netrw,javascript command! Ctags !ctags
     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
 augroup END
