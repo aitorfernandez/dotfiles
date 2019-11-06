@@ -28,7 +28,7 @@ alias gtheirs='git checkout --theirs'
 alias gours='git checkout --ours'
 alias gf='git submodule foreach'
 
-# From: http://www.jukie.net/bart/blog/pimping-out-git-log
+# http://www.jukie.net/bart/blog/pimping-out-git-log
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # Python
@@ -38,3 +38,8 @@ alias pip=pip3
 alias venv='python -m venv .venv'
 alias ac='deactivate &> /dev/null; source .venv/bin/activate'
 alias de='deactivate'
+
+# Postgres
+alias pstart='pg_ctl -D /usr/local/var/postgres start'
+alias pstop='pg_ctl -D /usr/local/var/postgres stop'
+alias prestart='pg_ctl -D /usr/local/var/postgres restart'
