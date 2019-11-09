@@ -5,6 +5,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('ap/vim-css-color')
+call minpac#add('cespare/vim-toml')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('kshenoy/vim-signature')
