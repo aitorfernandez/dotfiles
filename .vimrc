@@ -138,6 +138,7 @@ let g:netrw_preview       =1
 let g:netrw_winsize       =50
 let g:netrw_altv          =1
 let g:netrw_localrmdir    ='rm -r'
+let g:netrw_bufsettings   ='noma nomod nu nobl nowrap ro'
 
 nnoremap <leader><space> :Vex<cr>
 nnoremap <space> :bnext<cr>
