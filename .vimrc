@@ -8,6 +8,7 @@ call minpac#add('ap/vim-css-color')
 call minpac#add('cespare/vim-toml')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
+call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('morhetz/gruvbox')
@@ -81,6 +82,8 @@ set directory =$v/tmp/swap/
 set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
+
+set rtp+=/usr/local/opt/fzf
 
 " searching
 set incsearch hlsearch smartcase ignorecase

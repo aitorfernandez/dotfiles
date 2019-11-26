@@ -10,6 +10,10 @@ plugins=(
   zsh-syntax-highlighting
 )
 
+if type ag &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
+fi
+
 export PATH=$PATH:/usr/local/sbin:$HOME/.cargo/bin
 
 source $ZSH/oh-my-zsh.sh
