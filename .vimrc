@@ -139,7 +139,7 @@ let g:netrw_liststyle     =1
 let g:netrw_sort_sequence ='[\/]$,*'
 " keep the cursor in the netrw window
 let g:netrw_preview       =1
-let g:netrw_winsize       =50
+let g:netrw_winsize       =80
 let g:netrw_altv          =1
 let g:netrw_localrmdir    ='rm -r'
 let g:netrw_bufsettings   ='noma nomod nu nobl nowrap ro'
