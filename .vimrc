@@ -73,10 +73,10 @@ set softtabstop =2
 " don't break words when wrapping text
 set linebreak
 " fold
-set foldlevel   =99
+set foldlevel =99
 
-set scrolloff    =3
-set sidescrolloff=5
+set scrolloff     =3
+set sidescrolloff =5
 
 set backup
 set backupdir =$v/tmp/backup/
@@ -86,6 +86,8 @@ set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
 
 set rtp+=/usr/local/opt/fzf
+
+nnoremap <C-p> :Files<cr>
 
 " searching
 set incsearch hlsearch smartcase ignorecase
@@ -134,17 +136,17 @@ vnoremap <leader>s :sort i<cr>
 " augroup END
 
 " netrw
-let g:netrw_banner        =0
+let g:netrw_banner        = 0
 " set the default listing style, Long, one file per line with file size and time stamp
-let g:netrw_liststyle     =1
+let g:netrw_liststyle     = 1
 " directories on the top, files below
-let g:netrw_sort_sequence ='[\/]$,*'
+let g:netrw_sort_sequence = '[\/]$,*'
 " keep the cursor in the netrw window
-let g:netrw_preview       =1
-let g:netrw_winsize       =50
-let g:netrw_altv          =1
-let g:netrw_localrmdir    ='rm -r'
-let g:netrw_bufsettings   ='noma nomod nu nobl nowrap ro'
+let g:netrw_preview       = 1
+let g:netrw_winsize       = 50
+let g:netrw_altv          = 1
+let g:netrw_localrmdir    = 'rm -r'
+let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 
 nnoremap <leader><space> :Vex<cr>
 nnoremap <space> :bnext<cr>
@@ -220,13 +222,13 @@ command! PackStatus call minpac#status()
 command! PackUpdate call minpac#update()
 
 " snippets
-let g:UltiSnipsExpandTrigger       ='<tab>'
-let g:UltiSnipsJumpForwardTrigger  ='<tab>'
-let g:UltiSnipsJumpBackwardTrigger ='<s-tab>'
+let g:UltiSnipsExpandTrigger       = '<tab>'
+let g:UltiSnipsJumpForwardTrigger  = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " ale
-let g:ale_sign_column_always         =1
-let g:airline#extensions#ale#enabled =1
+let g:ale_sign_column_always         = 1
+let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'rust': ['rls'],
@@ -251,19 +253,19 @@ nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gdiff<cr>
 
-let g:fugitive_autoreload_status =0
+let g:fugitive_autoreload_status = 0
 
 " grepper
 runtime plugin/grepper.vim
 
-let g:grepper.highlight    =1
-let g:grepper.tools        =['ag', 'grep', 'git']
+let g:grepper.highlight    = 1
+let g:grepper.tools        = ['ag', 'grep', 'git']
 " quote the query automatically
-let g:grepper.prompt_quote =1
+let g:grepper.prompt_quote = 1
 " the short grep command
-let g:grepper.prompt_text  ='$t> '
+let g:grepper.prompt_text  = '$t> '
 let g:grepper.ag.grepprg  .=
-  \ ' --ignore-dir *.lock --ignore-dir node_modules --ignore-dir .venv --ignore-dir *.egg-info'
+\ ' --ignore-dir *.lock --ignore-dir node_modules --ignore-dir .venv --ignore-dir *.egg-info --ignore-dir bin --ignore-dir pkg'
 
 nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
 nnoremap <silent><leader>g :Grepper -tool git -noopen -jump<cr>
@@ -278,9 +280,15 @@ augroup go_files
   autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
   " :GoBuild and :GoTestCompile
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
-  autocmd FileType go nmap <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <leader>d <Plug>(go-doc)
+  autocmd FileType go nmap <leader>ds <Plug>(go-def-stack)
+  autocmd FileType go nmap <leader>i <Plug>(go-info)
   autocmd FileType go nmap <leader>r <Plug>(go-run)
-  autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
+  autocmd FileType go nmap <leader>t <Plug>(go-test)
+  " :GoAlternate  commands :A, :Av
+  autocmd Filetype go command! -bang A call go#alternate#Switch(<bang>0, 'edit')
+  autocmd Filetype go command! -bang Av call go#alternate#Switch(<bang>0, 'vsplit')
 augroup end
 
 " from fatih/vim-go-tutorial
@@ -293,19 +301,25 @@ function! s:build_go_files()
   endif
 endfunction
 
-let g:go_autodetect_gopath = 1
-let g:go_fmt_command = "goimports"
-let g:go_highlight_extra_types = 1
-let g:go_highlight_fields = 1
+let g:go_auto_type_info           = 1
+let g:go_autodetect_gopath        = 1
+let g:go_decls_includes           = 'func,type'
+let g:go_fmt_command              = 'goimports'
+let g:go_highlight_extra_types    = 1
+let g:go_highlight_fields         = 1
 let g:go_highlight_function_calls = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_generate_tags = 1
-let g:go_highlight_types = 1
-let g:go_list_type = "quickfix"
+let g:go_highlight_functions      = 1
+let g:go_highlight_generate_tags  = 1
+let g:go_highlight_types          = 1
+let g:go_list_type                = 'quickfix'
 
 map <C-n> :cnext<cr>
-map <C-p> :cprevious<cr>
+map <C-m> :cprevious<cr>
 nnoremap <leader>gq :cclose<cr>
+
+" open :GoDeclsDir
+nmap <C-g> :GoDeclsDir<cr>
+imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme gruvbox
