@@ -141,7 +141,7 @@ let g:netrw_liststyle     =1
 let g:netrw_sort_sequence ='[\/]$,*'
 " keep the cursor in the netrw window
 let g:netrw_preview       =1
-let g:netrw_winsize       =80
+let g:netrw_winsize       =50
 let g:netrw_altv          =1
 let g:netrw_localrmdir    ='rm -r'
 let g:netrw_bufsettings   ='noma nomod nu nobl nowrap ro'
@@ -280,6 +280,7 @@ augroup go_files
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
   autocmd FileType go nmap <leader>t <Plug>(go-test)
   autocmd FileType go nmap <leader>r <Plug>(go-run)
+  autocmd FileType go nmap <Leader>c <Plug>(go-coverage-toggle)
 augroup end
 
 " from fatih/vim-go-tutorial
