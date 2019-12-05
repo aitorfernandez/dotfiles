@@ -14,8 +14,9 @@ if type ag &> /dev/null; then
     export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore -g ""'
 fi
 
-export PATH=$PATH:/usr/local/sbin:$HOME/.cargo/bin
+export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/sbin:$PATH
+
+export GOPATH=$HOME/af/go
+export PATH=$GOPATH/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

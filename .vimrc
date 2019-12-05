@@ -6,15 +6,14 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('ap/vim-css-color')
 call minpac#add('cespare/vim-toml')
+call minpac#add('fatih/vim-go')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('morhetz/gruvbox')
-call minpac#add('mxw/vim-jsx')
 call minpac#add('pangloss/vim-javascript')
-call minpac#add('rust-lang/rust.vim')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
@@ -39,6 +38,9 @@ set path=.,,**
 
 " make Vim more liberal about hidden buffers
 set hidden
+
+" automatically save before :next, :make etc.
+set autowrite
 
 " autocompletion
 " . current buffer
@@ -187,7 +189,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>o :!open .<cr>
 
-nnoremap <leader>f :find **/*<C-z>
+" nnoremap <leader>f :find **/*<C-z>
 nnoremap <leader>e :e **/*<C-z>
 
 nnoremap <leader>l :set list!<cr>
@@ -202,10 +204,10 @@ nnoremap <leader>t :tabnew<space>
 
 inoremap jk <esc>
 
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
 
 " repeat in visual mode
 xnoremap . :norm.<cr>
@@ -269,6 +271,40 @@ nnoremap <silent><leader>sa :Grepper -open -switch -prompt<cr>
 
 nmap sz <plug>(GrepperOperator)
 xmap sz <plug>(GrepperOperator)
+
+" vim-go
+augroup go_files
+  autocmd!
+  autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+  " :GoBuild and :GoTestCompile
+  autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
+  autocmd FileType go nmap <leader>t <Plug>(go-test)
+  autocmd FileType go nmap <leader>r <Plug>(go-run)
+augroup end
+
+" from fatih/vim-go-tutorial
+function! s:build_go_files()
+  let l:file = expand('%')
+  if l:file =~# '^\f\+_test\.go$'
+    call go#test#Test(0, 1)
+  elseif l:file =~# '^\f\+\.go$'
+    call go#cmd#Build(0)
+  endif
+endfunction
+
+let g:go_autodetect_gopath = 1
+let g:go_fmt_command = "goimports"
+let g:go_highlight_extra_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_generate_tags = 1
+let g:go_highlight_types = 1
+let g:go_list_type = "quickfix"
+
+map <C-n> :cnext<cr>
+map <C-p> :cprevious<cr>
+nnoremap <leader>gq :cclose<cr>
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme gruvbox
