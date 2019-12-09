@@ -151,9 +151,9 @@ let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 nnoremap <leader><space> :Vex<cr>
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
-nnoremap <leader>- :E<cr>
+nnoremap <leader>- :e.<cr>
 " from tpope/vim-vinegar
-nnoremap <plug>(NetrwUp) :e.<cr>
+nnoremap <plug>(NetrwUp) :E<cr>
 if empty(maparg('-', 'n'))
   nmap - <plug>(NetrwUp)
 endif
