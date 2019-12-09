@@ -172,6 +172,8 @@ augroup file_type_ctags
     \ --languages=python --exclude=**/.tox --exclude=**/.venv --exclude=.git -f .tags -R .
   autocmd FileType netrw,javascript command! Ctags !ctags
     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
+  autocmd FileType go command! Ctags !ctags
+    \ --languages=go -f .tags -R
 augroup END
 
 " mappings
@@ -202,7 +204,8 @@ nnoremap <leader>ls :ls<cr>:b<space>
 for i in range(1, 9)
   execute 'nnoremap <leader>'.i.' '.i.'gt<cr>'
 endfor
-map <C-t> :tabnew<cr>
+ca tn tabnew
+ca tc tabclose
 
 inoremap jk <esc>
 
@@ -315,7 +318,7 @@ let g:go_list_type                = 'quickfix'
 
 map <C-n> :cnext<cr>
 map <C-m> :cprevious<cr>
-inoremap gq :cclose<cr>
+nnoremap gq :cclose<cr>
 
 " open :GoDeclsDir
 nmap <C-g> :GoDeclsDir<cr>
