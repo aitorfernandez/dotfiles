@@ -315,7 +315,7 @@ let g:go_list_type                = 'quickfix'
 
 map <C-n> :cnext<cr>
 map <C-m> :cprevious<cr>
-nnoremap <leader>gq :cclose<cr>
+inoremap gq :cclose<cr>
 
 " open :GoDeclsDir
 nmap <C-g> :GoDeclsDir<cr>
