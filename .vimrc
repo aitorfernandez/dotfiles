@@ -126,6 +126,12 @@ augroup buf_write_pre_trim_whitespace
   autocmd BufWritePre * :call TrimWhitespace()
 augroup end
 
+" wrap long lines in quickfix
+augroup quickfix
+  autocmd!
+  autocmd FileType qf setlocal wrap
+augroup END
+
 " sort
 vnoremap <leader>s :sort i<cr>
 
