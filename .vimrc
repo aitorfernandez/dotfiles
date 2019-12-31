@@ -107,10 +107,10 @@ augroup spell
 augroup END
 
 " wildmenu
-set wildmenu                            " Command line autocompletion
-set wildmode   =list:longest,full       " Shows all the options
-set wildignore+=*.sw?                   " Vim swap files
-set wildignore+=*/node_modules/*,*/dist " JS
+set wildmenu                                       " Command line autocompletion
+set wildmode   =list:longest,full                  " Shows all the options
+set wildignore+=*.sw?                              " Vim swap files
+set wildignore+=*/node_modules/*,*/dist,*/vendor/* " JS
 
 set wildcharm=<C-z>
 
