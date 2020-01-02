@@ -274,7 +274,7 @@ let g:grepper.prompt_quote = 1
 " the short grep command
 let g:grepper.prompt_text  = '$t> '
 let g:grepper.ag.grepprg  .=
-\ ' --ignore-dir *.lock --ignore-dir node_modules --ignore-dir .venv --ignore-dir *.egg-info --ignore-dir bin --ignore-dir pkg'
+\ ' --ignore *.lock --ignore-dir *.lock --ignore-dir node_modules --ignore-dir .venv --ignore-dir *.egg-info --ignore-dir bin --ignore-dir pkg'
 
 nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
 nnoremap <silent><leader>g :Grepper -tool git -noopen -jump<cr>
