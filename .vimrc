@@ -223,6 +223,9 @@ inoremap jk <esc>
 " repeat in visual mode
 xnoremap . :norm.<cr>
 
+" autocomplete
+inoremap <c-a> <c-s-x><c-s-o>
+
 " packages
 
 " minpac
