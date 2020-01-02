@@ -154,7 +154,6 @@ let g:netrw_altv          = 1
 let g:netrw_localrmdir    = 'rm -r'
 let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 
-nnoremap <leader><space> :Vex<cr>
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
 nnoremap <leader>- :e.<cr>
@@ -200,7 +199,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>o :!open .<cr>
 
 " nnoremap <leader>f :find **/*<C-z>
-nnoremap <leader>e :e **/*<C-z>
+nnoremap <leader>e :e <C-z>
+nnoremap <leader>ed :e **/*<C-z>
+nnoremap <leader>vs :vs <C-z>
+nnoremap <leader>vsd :vs **/*<C-z>
 
 nnoremap <leader>l :set list!<cr>
 
