@@ -199,10 +199,8 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>o :!open .<cr>
 
 " nnoremap <leader>f :find **/*<C-z>
-nnoremap <leader>e :e <C-z>
-nnoremap <leader>ed :e **/*<C-z>
-nnoremap <leader>vs :vs <C-z>
-nnoremap <leader>vsd :vs **/*<C-z>
+nnoremap <leader>e :e **/*<C-z>
+nnoremap <leader>vs :vs **/*<C-z>
 
 nnoremap <leader>l :set list!<cr>
 
