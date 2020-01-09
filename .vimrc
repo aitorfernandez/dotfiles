@@ -87,7 +87,6 @@ set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
 
 set rtp+=/usr/local/opt/fzf
-
 nnoremap <C-p> :Files<cr>
 
 " searching
@@ -157,6 +156,7 @@ let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
+
 nnoremap <leader>- :e.<cr>
 " from tpope/vim-vinegar
 nnoremap <plug>(NetrwUp) :E<cr>
