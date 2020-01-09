@@ -179,7 +179,7 @@ augroup file_type_ctags
   autocmd FileType netrw,javascript command! Ctags !ctags
     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
   autocmd FileType go command! Ctags !ctags
-    \ --languages=go -f .tags -R
+    \ --languages=go -f .tags -R .
 augroup END
 
 " mappings
