@@ -197,8 +197,6 @@ nnoremap <leader>w :w!<cr>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
-nnoremap <leader>o :!open .<cr>
-
 " nnoremap <leader>f :find **/*<C-z>
 nnoremap <leader>e :e **/*<C-z>
 nnoremap <leader>vs :vs **/*<C-z>
