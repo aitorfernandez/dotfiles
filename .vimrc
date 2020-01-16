@@ -324,13 +324,12 @@ let g:go_highlight_generate_tags  = 1
 let g:go_highlight_types          = 1
 let g:go_list_type                = 'quickfix'
 
+nmap <C-g> :GoDeclsDir<cr>
+imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+
 map <C-n> :cnext<cr>
 map <C-m> :cprevious<cr>
 nnoremap gq :cclose<cr>
-
-" open :GoDeclsDir
-nmap <C-g> :GoDeclsDir<cr>
-imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme gruvbox
