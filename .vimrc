@@ -87,7 +87,6 @@ set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
 
 set rtp+=/usr/local/opt/fzf
-
 nnoremap <C-p> :Files<cr>
 
 " searching
@@ -157,6 +156,7 @@ let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
+
 nnoremap <leader>- :e.<cr>
 " from tpope/vim-vinegar
 nnoremap <plug>(NetrwUp) :E<cr>
@@ -179,7 +179,7 @@ augroup file_type_ctags
   autocmd FileType netrw,javascript command! Ctags !ctags
     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
   autocmd FileType go command! Ctags !ctags
-    \ --languages=go -f .tags -R
+    \ --languages=go -f .tags -R .
 augroup END
 
 " mappings
