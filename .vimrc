@@ -89,7 +89,13 @@ set viminfo   ='100,n$v/tmp/viminfo
 " fzf
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :Files<cr>
-nnoremap <C-b> :Buffers<cr>
+nnoremap <leader>' :Buffers<cr>
+
+" Window movement shortcuts
+nmap <C-j> <C-W>j
+nmap <C-k> <C-W>k
+nmap <C-h> <C-W>h
+nmap <C-l> <C-W>l
 
 " searching
 set incsearch hlsearch smartcase ignorecase
@@ -156,6 +162,7 @@ let g:netrw_altv          = 1
 let g:netrw_localrmdir    = 'rm -r'
 let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 
+nnoremap <C-e> :e#<CR>
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
 
