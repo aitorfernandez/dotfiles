@@ -145,8 +145,8 @@ vnoremap <leader>s :sort i<cr>
 let g:netrw_banner        = 0
 " set the default listing style, Long, one file per line with file size and time stamp
 let g:netrw_liststyle     = 1
-" directories on the top, files below
-let g:netrw_sort_by       = 'name'
+let g:netrw_sort_options = 'i'
+let g:netrw_sort_sequence = '[\/]\s'
 " keep the cursor in the netrw window
 let g:netrw_preview       = 1
 let g:netrw_winsize       = 50
