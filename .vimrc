@@ -86,8 +86,10 @@ set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='100,n$v/tmp/viminfo
 
+" fzf
 set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :Files<cr>
+nnoremap <C-b> :Buffers<cr>
 
 " searching
 set incsearch hlsearch smartcase ignorecase
