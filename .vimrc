@@ -232,7 +232,7 @@ inoremap jk <esc>
 xnoremap . :norm.<cr>
 
 " autocomplete
-inoremap <c-a> <c-s-x><c-s-o>
+inoremap <C-a> <c-s-x><c-s-o>
 
 " packages
 
