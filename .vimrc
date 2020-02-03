@@ -92,10 +92,10 @@ nnoremap <C-p> :Files<cr>
 nnoremap <leader>' :Buffers<cr>
 
 " Window movement shortcuts
-nmap <C-j> <C-W>j
-nmap <C-k> <C-W>k
-nmap <C-h> <C-W>h
-nmap <C-l> <C-W>l
+" nmap <C-j> <C-W>j
+" nmap <C-k> <C-W>k
+" nmap <C-h> <C-W>h
+" nmap <C-l> <C-W>l
 
 " searching
 set incsearch hlsearch smartcase ignorecase
