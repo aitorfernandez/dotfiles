@@ -214,6 +214,8 @@ nnoremap <leader>l :set list!<cr>
 
 nnoremap <leader>ls :ls<cr>:b<space>
 
+nnoremap <leader>o :only<cr>
+
 " tabs
 for i in range(1, 9)
   execute 'nnoremap <leader>'.i.' '.i.'gt<cr>'
