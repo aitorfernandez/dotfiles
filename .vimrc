@@ -91,12 +91,6 @@ set rtp+=/usr/local/opt/fzf
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>' :Buffers<cr>
 
-" Window movement shortcuts
-" nmap <C-j> <C-W>j
-" nmap <C-k> <C-W>k
-" nmap <C-h> <C-W>h
-" nmap <C-l> <C-W>l
-
 " searching
 set incsearch hlsearch smartcase ignorecase
 " turn off highlighting in insert mode, and turn back on again when leaving
@@ -153,16 +147,17 @@ vnoremap <leader>s :sort i<cr>
 let g:netrw_banner        = 0
 " set the default listing style, Long, one file per line with file size and time stamp
 let g:netrw_liststyle     = 1
-let g:netrw_sort_options = 'i'
+let g:netrw_sort_options  = 'i'
 let g:netrw_sort_sequence = '[\/]\s'
 " keep the cursor in the netrw window
-let g:netrw_preview       = 1
-let g:netrw_winsize       = 50
 let g:netrw_altv          = 1
+let g:netrw_preview       = 1
+" It defines the default proportion of the new window relative to the current window
+let g:netrw_winsize       = 50
 let g:netrw_localrmdir    = 'rm -r'
 let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 
-nnoremap <C-e> :e#<CR>
+nnoremap <C-e> :e#<cr>
 nnoremap <space> :bnext<cr>
 nnoremap <bs> :bprev<cr>
 
@@ -252,9 +247,7 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:ale_sign_column_always         = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'rust': ['rls'],
-\   'python': ['flake8']
+\   'javascript': ['eslint']
 \ }
 let g:ale_rust_rls_toolchain = 'stable'
 
@@ -341,6 +334,7 @@ imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 map <C-n> :cnext<cr>
 map <C-m> :cprevious<cr>
 nnoremap gq :cclose<cr>
+nnoremap gw :cw<cr>
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme gruvbox
