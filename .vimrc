@@ -89,8 +89,11 @@ set viminfo   ='100,n$v/tmp/viminfo
 
 " fzf
 set rtp+=/usr/local/opt/fzf
+
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>' :Buffers<cr>
+
+let g:fzf_preview_window = ''
 
 " searching
 set incsearch hlsearch smartcase ignorecase
