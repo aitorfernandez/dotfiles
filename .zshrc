@@ -5,9 +5,10 @@ ZSH_THEME="odin"
 DEFAULT_USER="aitorfernandez"
 
 plugins=(
-  cargo
   git
   zsh-syntax-highlighting
+  docker
+  docker-compose
 )
 
 if type ag &> /dev/null; then
