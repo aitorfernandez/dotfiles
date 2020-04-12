@@ -6,6 +6,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('ap/vim-css-color')
 call minpac#add('cespare/vim-toml')
+call minpac#add('cocopon/iceberg.vim')
 call minpac#add('fatih/vim-go')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
@@ -14,7 +15,7 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
-call minpac#add('morhetz/gruvbox')
+" call minpac#add('morhetz/gruvbox')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('tpope/vim-commentary')
@@ -341,5 +342,6 @@ nnoremap gq :cclose<cr>
 nnoremap gw :cw<cr>
 
 " colorscheme at the end of the file to avoid color issues
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = 'medium'
+" let g:gruvbox_contrast_dark = 'medium'
+" colorscheme gruvbox
+colorscheme iceberg
