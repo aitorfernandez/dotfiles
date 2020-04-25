@@ -9,6 +9,7 @@ plugins=(
   zsh-syntax-highlighting
   docker
   docker-compose
+  gcloud
 )
 
 if type ag &> /dev/null; then
@@ -21,3 +22,9 @@ export GOPATH=$HOME/af/go
 export PATH=$GOPATH/bin:$PATH
 
 source $ZSH/oh-my-zsh.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/aitorfernandez/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/aitorfernandez/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/aitorfernandez/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/aitorfernandez/google-cloud-sdk/completion.zsh.inc'; fi
