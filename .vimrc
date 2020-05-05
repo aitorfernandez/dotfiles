@@ -4,6 +4,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
+call minpac#add('aitorfernandez/vim-redis')
 call minpac#add('ap/vim-css-color')
 call minpac#add('cespare/vim-toml')
 call minpac#add('cocopon/iceberg.vim')
@@ -15,7 +16,6 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
-" call minpac#add('morhetz/gruvbox')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('tpope/vim-commentary')
@@ -236,6 +236,13 @@ xnoremap . :norm.<cr>
 " autocomplete
 inoremap <C-a> <c-s-x><c-s-o>
 
+" from http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
+" make J, K, L, and H move the cursor MORE.
+nnoremap J }
+nnoremap K {
+nnoremap L g_
+nnoremap H ^
+
 " packages
 
 " minpac
@@ -332,6 +339,8 @@ let g:go_highlight_functions      = 1
 let g:go_highlight_generate_tags  = 1
 let g:go_highlight_types          = 1
 let g:go_list_type                = 'quickfix'
+" remove K map
+let g:go_doc_keywordprg_enabled   = 0
 
 nmap <C-g> :GoDeclsDir<cr>
 imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
@@ -342,6 +351,4 @@ nnoremap gq :cclose<cr>
 nnoremap gw :cw<cr>
 
 " colorscheme at the end of the file to avoid color issues
-" let g:gruvbox_contrast_dark = 'medium'
-" colorscheme gruvbox
 colorscheme iceberg
