@@ -237,11 +237,16 @@ xnoremap . :norm.<cr>
 inoremap <C-a> <c-s-x><c-s-o>
 
 " from http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
-" make J, K, L, and H move the cursor MORE.
+" make J, K, L, and H move more the cursor
 nnoremap J }
 nnoremap K {
 nnoremap L g_
 nnoremap H ^
+
+vnoremap J }
+vnoremap K {
+vnoremap L g_
+vnoremap H ^
 
 " packages
 
