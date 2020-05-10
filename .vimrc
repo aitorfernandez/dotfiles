@@ -249,7 +249,7 @@ vnoremap K {
 vnoremap L g_
 vnoremap H ^
 
-" packages
+" plugins
 
 " minpac
 command! PackClean call minpac#clean()
@@ -355,6 +355,11 @@ map <C-n> :cnext<cr>
 map <C-m> :cprevious<cr>
 nnoremap gq :cclose<cr>
 nnoremap gw :cw<cr>
+
+" vimtex
+let g:vimtex_compiler_latexmk = {
+\   'build_dir' : 'latexbuild',
+\ }
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme iceberg
