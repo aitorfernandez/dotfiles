@@ -282,9 +282,9 @@ let g:lightline = {
 \ }
 
 " vim-fugitive
-nnoremap <leader>gs :Gstatus<cr>
-nnoremap <leader>gc :Gcommit<cr>
-nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gs :vert Git <bar> 45winc <<cr>
+" nnoremap <leader>gc :Gcommit<cr>
+" nnoremap <leader>gd :Gdiff<cr>
 
 let g:fugitive_autoreload_status = 0
 
@@ -314,9 +314,9 @@ augroup go_files
   " :GoBuild and :GoTestCompile
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
   autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-  autocmd FileType go nmap <leader>d <Plug>(go-doc)
-  autocmd FileType go nmap <leader>ds <Plug>(go-def-stack)
-  autocmd FileType go nmap <leader>i <Plug>(go-info)
+  " autocmd FileType go nmap <leader>d <Plug>(go-doc)
+  " autocmd FileType go nmap <leader>ds <Plug>(go-def-stack)
+  " autocmd FileType go nmap <leader>i <Plug>(go-info)
   autocmd FileType go nmap <leader>r <Plug>(go-run)
   autocmd FileType go nmap <leader>t <Plug>(go-test)
   " :GoAlternate  commands :A, :Av
@@ -348,13 +348,16 @@ let g:go_list_type                = 'quickfix'
 " remove K map
 let g:go_doc_keywordprg_enabled   = 0
 
-nmap <C-g> :GoDeclsDir<cr>
-imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
+" nmap <C-g> :GoDeclsDir<cr>
+" imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
-map <C-n> :cnext<cr>
-map <C-m> :cprevious<cr>
-nnoremap gq :cclose<cr>
-nnoremap gw :cw<cr>
+" map <C-n> :cnext<cr>
+" map <C-m> :cprevious<cr>
+
+nnoremap <leader>cq :cclose<cr>
+nnoremap <leader>pq :pclose<cr>
+" nnoremap gq :cclose<cr>
+" nnoremap gw :cw<cr>
 
 " vimtex
 let g:vimtex_compiler_latexmk = {
