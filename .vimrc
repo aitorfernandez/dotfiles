@@ -93,7 +93,7 @@ set viminfo   ='100,n$v/tmp/viminfo
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <C-p> :Files<cr>
-nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>' :Buffers<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>s :Snippets<cr>
 
