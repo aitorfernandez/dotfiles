@@ -93,7 +93,9 @@ set viminfo   ='100,n$v/tmp/viminfo
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <C-p> :Files<cr>
-nnoremap <leader>' :Buffers<cr>
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>m :Marks<cr>
+nnoremap <leader>s :Snippets<cr>
 
 let g:fzf_preview_window = ''
 
@@ -162,10 +164,11 @@ let g:netrw_preview       = 1
 let g:netrw_winsize       = 50
 let g:netrw_localrmdir    = 'rm -r'
 let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
+let g:netrw_dirhistmax    = 0
 
 nnoremap <C-e> :e#<cr>
-nnoremap <space> :bnext<cr>
-nnoremap <bs> :bprev<cr>
+" nnoremap <space> :bnext<cr>
+" nnoremap <bs> :bprev<cr>
 
 nnoremap <leader>- :e.<cr>
 " from tpope/vim-vinegar
@@ -287,6 +290,9 @@ nnoremap <leader>gs :vert Git <bar> 45winc <<cr>
 " nnoremap <leader>gd :Gdiff<cr>
 
 let g:fugitive_autoreload_status = 0
+
+ca gb Git branch<space>
+ca gco Git checkout<space>
 
 " grepper
 runtime plugin/grepper.vim
