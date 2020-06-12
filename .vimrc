@@ -285,7 +285,7 @@ let g:lightline = {
 \ }
 
 " vim-fugitive
-nnoremap <leader>gs :vert Git <bar> 45winc <<cr>
+nnoremap <leader>gs :vert Git <bar> 35winc <<cr>
 " nnoremap <leader>gc :Gcommit<cr>
 " nnoremap <leader>gd :Gdiff<cr>
 
