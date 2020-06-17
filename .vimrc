@@ -6,8 +6,8 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('aitorfernandez/vim-redis')
 call minpac#add('ap/vim-css-color')
+call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('cespare/vim-toml')
-call minpac#add('cocopon/iceberg.vim')
 call minpac#add('fatih/vim-go')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
@@ -285,7 +285,7 @@ let g:lightline = {
 \ }
 
 " vim-fugitive
-nnoremap <leader>gs :vert Git <bar> 35winc <<cr>
+nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
 " nnoremap <leader>gc :Gcommit<cr>
 " nnoremap <leader>gd :Gdiff<cr>
 
@@ -371,4 +371,4 @@ let g:vimtex_compiler_latexmk = {
 \ }
 
 " colorscheme at the end of the file to avoid color issues
-colorscheme iceberg
+colorscheme nord
