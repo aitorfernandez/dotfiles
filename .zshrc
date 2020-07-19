@@ -5,11 +5,12 @@ ZSH_THEME="odin"
 DEFAULT_USER="aitorfernandez"
 
 plugins=(
-  git
-  zsh-syntax-highlighting
   docker
   docker-compose
   gcloud
+  git
+  terraform
+  zsh-syntax-highlighting
 )
 
 if type ag &> /dev/null; then

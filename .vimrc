@@ -124,6 +124,8 @@ set wildignore+=*/node_modules/*,*/dist,*/vendor/* " JS
 
 set wildcharm=<C-z>
 
+set mouse=a
+
 " trailing whitespace
 fun! TrimWhitespace()
   let l:save = winsaveview()
@@ -142,7 +144,6 @@ augroup quickfix
   autocmd FileType qf setlocal wrap
 augroup END
 
-" sort
 vnoremap <leader>s :sort i<cr>
 
 " save
@@ -160,11 +161,12 @@ let g:netrw_sort_sequence = '[\/]\s'
 " keep the cursor in the netrw window
 let g:netrw_altv          = 1
 let g:netrw_preview       = 1
-" It defines the default proportion of the new window relative to the current window
+" it defines the default proportion of the new window relative to the current window
 let g:netrw_winsize       = 50
-let g:netrw_localrmdir    = 'rm -r'
+" let g:netrw_localrmdir  = 'rm -r'
 let g:netrw_bufsettings   = 'noma nomod nu nobl nowrap ro'
 let g:netrw_dirhistmax    = 0
+" let g:netrw_keepdir     = 0
 
 nnoremap <C-e> :e#<cr>
 " nnoremap <space> :bnext<cr>
@@ -187,8 +189,8 @@ augroup END
 " tags
 set tags=.tags
 augroup file_type_ctags
-  autocmd FileType python command! Ctags !ctags
-    \ --languages=python --exclude=**/.tox --exclude=**/.venv --exclude=.git -f .tags -R .
+  " autocmd FileType python command! Ctags !ctags
+  "   \ --languages=python --exclude=**/.tox --exclude=**/.venv --exclude=.git -f .tags -R .
   autocmd FileType netrw,javascript command! Ctags !ctags
     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
   autocmd FileType go command! Ctags !ctags
@@ -216,7 +218,8 @@ nnoremap <leader>vs :vs **/*<C-z>
 
 nnoremap <leader>l :set list!<cr>
 
-nnoremap <leader>ls :ls<cr>:b<space>
+" buffers
+" nnoremap <leader>ls :ls<cr>:b<space>
 
 nnoremap <leader>o :only<cr>
 
@@ -357,8 +360,8 @@ let g:go_doc_keywordprg_enabled   = 0
 " nmap <C-g> :GoDeclsDir<cr>
 " imap <C-g> <esc>:<C-u>GoDeclsDir<cr>
 
-" map <C-n> :cnext<cr>
-" map <C-m> :cprevious<cr>
+map <C-n> :cnext<cr>
+map <C-m> :cprevious<cr>
 
 nnoremap <leader>cq :cclose<cr>
 nnoremap <leader>pq :pclose<cr>
