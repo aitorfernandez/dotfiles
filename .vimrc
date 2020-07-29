@@ -22,6 +22,7 @@ call minpac#add('pangloss/vim-javascript')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-markdown')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-surround')
 call minpac#add('w0rp/ale')
@@ -274,7 +275,6 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint']
 \ }
-let g:ale_rust_rls_toolchain = 'stable'
 
 " lightline.vim
 let g:lightline = {
@@ -289,7 +289,8 @@ let g:lightline = {
 \ }
 
 " vim-fugitive
-nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
+" nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
+nnoremap <leader>gs :vert :Gstatus<cr>
 " nnoremap <leader>gc :Gcommit<cr>
 " nnoremap <leader>gd :Gdiff<cr>
 

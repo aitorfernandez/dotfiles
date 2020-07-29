@@ -1,0 +1,47 @@
+snippet ri
+	import React from 'react'
+
+snippet rip
+	import React from 'react'
+	import PropTypes from 'prop-types'
+
+# Default new full component
+snippet rnc
+	import React from 'react'
+	import PropTypes from 'prop-types'
+
+	export function ${1}(${4}) {
+		return (
+			<div>
+			</div>
+		)
+	}
+
+	${2:$1}.defaultProps = {
+	}
+
+	${3:$1}.propTypes = {
+	}
+
+snippet rpt
+	${1}.propTypes = {
+		${2}: PropTypes.${0},
+	}
+
+# Default props for Presentational component
+snippet rdp
+	${1}.defaultProps = {
+		${2}: ${0},
+	}
+
+# New story
+snippet rns
+	import React from 'react'
+	import { storiesOf } from '@storybook/react'
+
+	import { ${1} } from '${2}'
+
+	storiesOf('${3:$1}', module)
+		.add('default', () => (
+			<${4:$1} />
+		))
