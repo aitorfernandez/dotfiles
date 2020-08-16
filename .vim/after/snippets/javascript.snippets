@@ -1,27 +1,20 @@
 snippet ri
 	import React from 'react'
 
+snippet risc
+	import styled from 'styled-components'
+
 snippet rip
+	import PropTypes from 'prop-types'
+
+snippet rirp
 	import React from 'react'
 	import PropTypes from 'prop-types'
 
-# Default new full component
-snippet rnc
+snippet rirpsc
 	import React from 'react'
 	import PropTypes from 'prop-types'
-
-	export function ${1}(${4}) {
-		return (
-			<div>
-			</div>
-		)
-	}
-
-	${2:$1}.defaultProps = {
-	}
-
-	${3:$1}.propTypes = {
-	}
+	import styled from 'styled-components'
 
 snippet rpt
 	${1}.propTypes = {
@@ -37,11 +30,16 @@ snippet rdp
 # New story
 snippet rns
 	import React from 'react'
-	import { storiesOf } from '@storybook/react'
 
 	import { ${1} } from '${2}'
 
-	storiesOf('${3:$1}', module)
-		.add('default', () => (
-			<${4:$1} />
-		))
+	export default {
+		title: '${3:$1}',
+		component: ${4:$1},
+	}
+
+	export const Default = () => <${5:$1} />
+
+# Get theme
+snippet gt
+	${1}: ${t('${2}')};
