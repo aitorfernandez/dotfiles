@@ -16,6 +16,12 @@ snippet rirpsc
 	import PropTypes from 'prop-types'
 	import styled from 'styled-components'
 
+snippet rit
+	import {
+		t,
+		theme,
+	} from '${1}'
+
 snippet rpt
 	${1}.propTypes = {
 		${2}: PropTypes.${0},
@@ -41,5 +47,19 @@ snippet rns
 	export const Default = () => <${5:$1} />
 
 # Get theme
-snippet gt
+snippet t
 	${1}: ${t('${2}')};
+
+# styled-components variables
+snippet scc
+	const ${1} = styled.${2}
+
+# css
+snippet bred
+	border: 1px solid red;
+
+snippet bgreen
+	border: 1px solid green;
+
+snippet bblue
+	border: 1px solid blue;

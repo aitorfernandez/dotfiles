@@ -15,7 +15,7 @@ call minpac#add('itchyny/lightline.vim')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
-call minpac#add('lervag/vimtex')
+" call minpac#add('lervag/vimtex')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('pangloss/vim-javascript')
@@ -275,6 +275,9 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint']
 \ }
+
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 
 " lightline.vim
 let g:lightline = {
