@@ -16,11 +16,9 @@ snippet rirpsc
 	import PropTypes from 'prop-types'
 	import styled from 'styled-components'
 
+# import theme helper
 snippet rit
-	import {
-		t,
-		theme,
-	} from '${1}'
+	import { t${1} } from '${1}'
 
 snippet rpt
 	${1}.propTypes = {
@@ -40,11 +38,17 @@ snippet rns
 	import { ${1} } from '${2}'
 
 	export default {
-		title: '${3:$1}',
-		component: ${4:$1},
+		component: ${3:$1},
+		title: '${4}/${5:$1}',
 	}
 
-	export const Default = () => <${5:$1} />
+	export const Default = () => (
+		<${6:$1} />
+	)
+
+# export
+snippet ef "export { } from ''"
+	export { ${1} } from './${2:$1}'
 
 # Get theme
 snippet t

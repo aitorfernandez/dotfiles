@@ -15,7 +15,6 @@ call minpac#add('itchyny/lightline.vim')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
-" call minpac#add('lervag/vimtex')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('pangloss/vim-javascript')
@@ -95,7 +94,6 @@ set viminfo   ='100,n$v/tmp/viminfo
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <C-p> :Files<cr>
-nnoremap <leader>' :Buffers<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>s :Snippets<cr>
 
@@ -171,8 +169,8 @@ let g:netrw_dirhistmax    = 0
 " let g:netrw_keepdir     = 0
 
 nnoremap <C-e> :e#<cr>
-" nnoremap <space> :bnext<cr>
-" nnoremap <bs> :bprev<cr>
+nnoremap <silent> [b :bprevious<cr>
+nnoremap <silent> ]b :bnext<cr>
 
 nnoremap <leader>- :e.<cr>
 " from tpope/vim-vinegar
@@ -210,6 +208,7 @@ nnoremap <leader>p "+p
 
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w!<cr>
+nnoremap <leader>a :wa!<cr>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -234,10 +233,10 @@ ca tc tabclose
 
 inoremap jk <esc>
 
-" noremap <up> <nop>
-" noremap <down> <nop>
-" noremap <left> <nop>
-" noremap <right> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
+noremap <left> <nop>
+noremap <right> <nop>
 
 " repeat in visual mode
 xnoremap . :norm.<cr>
@@ -258,6 +257,9 @@ vnoremap L g_
 vnoremap H ^
 
 " plugins
+
+" terraform
+let g:terraform_fmt_on_save = 1
 
 " minpac
 command! PackClean call minpac#clean()
@@ -328,9 +330,6 @@ augroup go_files
   " :GoBuild and :GoTestCompile
   autocmd FileType go nmap <leader>b :<C-u>call <SID>build_go_files()<cr>
   autocmd FileType go nmap <leader>c <Plug>(go-coverage-toggle)
-  " autocmd FileType go nmap <leader>d <Plug>(go-doc)
-  " autocmd FileType go nmap <leader>ds <Plug>(go-def-stack)
-  " autocmd FileType go nmap <leader>i <Plug>(go-info)
   autocmd FileType go nmap <leader>r <Plug>(go-run)
   autocmd FileType go nmap <leader>t <Plug>(go-test)
   " :GoAlternate  commands :A, :Av
@@ -372,11 +371,6 @@ nnoremap <leader>cq :cclose<cr>
 nnoremap <leader>pq :pclose<cr>
 " nnoremap gq :cclose<cr>
 " nnoremap gw :cw<cr>
-
-" vimtex
-let g:vimtex_compiler_latexmk = {
-\   'build_dir' : 'latexbuild',
-\ }
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme nord
