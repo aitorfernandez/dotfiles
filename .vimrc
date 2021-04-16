@@ -372,5 +372,8 @@ nnoremap <leader>pq :pclose<cr>
 " nnoremap gq :cclose<cr>
 " nnoremap gw :cw<cr>
 
+" vim-markdown
+let g:markdown_fenced_languages = ['go', 'bash=sh']
+
 " colorscheme at the end of the file to avoid color issues
 colorscheme nord
