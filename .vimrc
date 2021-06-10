@@ -5,7 +5,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('aitorfernandez/vim-redis')
-call minpac#add('ap/vim-css-color')
+" call minpac#add('ap/vim-css-color')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('cespare/vim-toml')
 call minpac#add('fatih/vim-go')
@@ -18,10 +18,10 @@ call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('pangloss/vim-javascript')
+call minpac#add('rhysd/vim-gfm-syntax')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-markdown')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-surround')
 call minpac#add('w0rp/ale')
@@ -233,10 +233,10 @@ ca tc tabclose
 
 inoremap jk <esc>
 
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <left> <nop>
-noremap <right> <nop>
+" noremap <up> <nop>
+" noremap <down> <nop>
+" noremap <left> <nop>
+" noremap <right> <nop>
 
 " repeat in visual mode
 xnoremap . :norm.<cr>
@@ -295,7 +295,7 @@ let g:lightline = {
 
 " vim-fugitive
 " nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
-nnoremap <leader>gs :vert :Gstatus<cr>
+nnoremap <leader>gs :vert :Git<cr>
 " nnoremap <leader>gc :Gcommit<cr>
 " nnoremap <leader>gd :Gdiff<cr>
 
@@ -372,8 +372,9 @@ nnoremap <leader>pq :pclose<cr>
 " nnoremap gq :cclose<cr>
 " nnoremap gw :cw<cr>
 
-" vim-markdown
-let g:markdown_fenced_languages = ['go', 'bash=sh']
+" vim-gfm-syntax
+let g:gfm_syntax_enable_always = 0
+let g:markdown_fenced_languages = ['go', 'json']
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme nord
