@@ -5,7 +5,6 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('aitorfernandez/vim-redis')
-" call minpac#add('ap/vim-css-color')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('cespare/vim-toml')
 call minpac#add('fatih/vim-go')
@@ -13,18 +12,19 @@ call minpac#add('hashivim/vim-terraform')
 call minpac#add('honza/vim-snippets')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('jparise/vim-graphql')
-call minpac#add('jtratner/vim-flavored-markdown')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
 call minpac#add('pangloss/vim-javascript')
+call minpac#add('plasticboy/vim-markdown')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-surround')
 call minpac#add('w0rp/ale')
+call minpac#add('OmniSharp/omnisharp-vim')
 
 packloadall
 
@@ -94,10 +94,12 @@ set viminfo   ='100,n$v/tmp/viminfo
 set rtp+=/usr/local/opt/fzf
 
 nnoremap <C-p> :Files<cr>
+nnoremap <leader>' :Buffers<cr>
 nnoremap <leader>m :Marks<cr>
 nnoremap <leader>s :Snippets<cr>
 
 let g:fzf_preview_window = ''
+let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'horizontal' } }
 
 " searching
 set incsearch hlsearch smartcase ignorecase
@@ -220,7 +222,7 @@ nnoremap <leader>vs :vs **/*<C-z>
 nnoremap <leader>l :set list!<cr>
 
 " buffers
-" nnoremap <leader>ls :ls<cr>:b<space>
+nnoremap <leader>ls :ls<cr>:b<space>
 
 nnoremap <leader>o :only<cr>
 
@@ -275,7 +277,8 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:ale_sign_column_always         = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
-\   'javascript': ['eslint']
+\   'javascript': ['eslint'],
+\   'cs': ['OmniSharp']
 \ }
 
 nmap <silent> <leader>aj :ALENext<cr>
@@ -324,7 +327,7 @@ nmap sz <plug>(GrepperOperator)
 xmap sz <plug>(GrepperOperator)
 
 " vim-go
-augroup go_files
+augroup go_commands
   autocmd!
   autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
   " :GoBuild and :GoTestCompile
@@ -372,10 +375,17 @@ nnoremap <leader>pq :pclose<cr>
 " nnoremap gq :cclose<cr>
 " nnoremap gw :cw<cr>
 
-" jtratner/vim-flavored-markdown
-augroup markdown
-  au!
-  au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
+" vim-markdown
+let g:vim_markdown_fenced_languages = ['bash=sh', 'go=go', 'js=javascript']
+
+" OmniSharp
+let g:OmniSharp_server_use_mono = 1
+
+augroup omnisharp_commands
+  autocmd!
+  autocmd CursorHold *.cs OmniSharpTypeLookup
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>w :w! <cr> <Plug>(omnisharp_code_format)
 augroup END
 
 " colorscheme at the end of the file to avoid color issues
