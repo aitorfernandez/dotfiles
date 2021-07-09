@@ -16,6 +16,7 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
+call minpac#add('OmniSharp/omnisharp-vim')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('plasticboy/vim-markdown')
 call minpac#add('SirVer/ultisnips')
@@ -24,7 +25,6 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
 call minpac#add('tpope/vim-surround')
 call minpac#add('w0rp/ale')
-call minpac#add('OmniSharp/omnisharp-vim')
 
 packloadall
 
@@ -46,6 +46,10 @@ set hidden
 
 " automatically save before :next, :make etc.
 set autowrite
+
+" turn off error beeping and flashing in Vim
+set visualbell
+set t_vb=
 
 " autocompletion
 " . current buffer
@@ -99,7 +103,7 @@ nnoremap <leader>m :Marks<cr>
 nnoremap <leader>s :Snippets<cr>
 
 let g:fzf_preview_window = ''
-let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'horizontal' } }
+" let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'horizontal' } }
 
 " searching
 set incsearch hlsearch smartcase ignorecase
@@ -244,7 +248,7 @@ inoremap jk <esc>
 xnoremap . :norm.<cr>
 
 " autocomplete
-inoremap <C-a> <c-s-x><c-s-o>
+inoremap <C-n> <c-s-x><c-s-o>
 
 " from http://karolis.koncevicius.lt/posts/porn_zen_and_vimrc/
 " make J, K, L, and H move more the cursor
@@ -381,9 +385,13 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'go=go', 'js=javascript']
 " OmniSharp
 let g:OmniSharp_server_use_mono = 1
 
+let g:netrw_list_hide= '.*\.cs\.meta'
+
 augroup omnisharp_commands
   autocmd!
   autocmd CursorHold *.cs OmniSharpTypeLookup
+
+  autocmd FileType cs setlocal tabstop=4 softtabstop=4 shiftwidth=4
 
   autocmd FileType cs nmap <silent> <buffer> <Leader>w :w! <cr> <Plug>(omnisharp_code_format)
 augroup END
