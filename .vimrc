@@ -303,8 +303,8 @@ let g:lightline = {
 " vim-fugitive
 " nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
 nnoremap <leader>gs :vert :Git<cr>
-" nnoremap <leader>gc :Gcommit<cr>
-" nnoremap <leader>gd :Gdiff<cr>
+nnoremap <leader>gc :Git commit<cr>
+nnoremap <leader>gd :Gdiff<cr>
 
 let g:fugitive_autoreload_status = 0
 
@@ -385,7 +385,7 @@ let g:vim_markdown_fenced_languages = ['bash=sh', 'go=go', 'js=javascript']
 " OmniSharp
 let g:OmniSharp_server_use_mono = 1
 
-let g:netrw_list_hide= '.*\.cs\.meta'
+let g:netrw_list_hide= '.*\.meta'
 
 augroup omnisharp_commands
   autocmd!

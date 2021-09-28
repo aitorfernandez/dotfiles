@@ -17,6 +17,10 @@ if type ag &> /dev/null; then
   export FZF_DEFAULT_COMMAND='ag -p ~/.gitignore --ignore .git --ignore pkg --ignore bin -g ""'
 fi
 
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+
 export PATH=$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/sbin:$PATH
 
 export GOPATH=$HOME/af/go
