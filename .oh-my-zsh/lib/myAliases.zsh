@@ -21,20 +21,24 @@ alias tswitch='tmux switch -t'
 
 alias o='open .'
 
-alias vim='/usr/local/bin/vim'
-alias v='/usr/local/bin/vim .'
+# alias vim='/usr/local/bin/vim'
+# alias v='/usr/bin/vim .'
+alias vim='/opt/homebrew/bin/vim'
+alias v='/opt/homebrew/bin/vim .'
 
 # Git
 alias gtheirs='git checkout --theirs'
 alias gours='git checkout --ours'
 alias gf='git submodule foreach'
 
+alias m='minikube'
+
 # http://www.jukie.net/bart/blog/pimping-out-git-log
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
 # Python
-alias python=python3
-alias pip=pip3
+# alias python=python3
+# alias pip=pip3
 
 alias venv='python -m venv .venv'
 alias ac='deactivate &> /dev/null; source .venv/bin/activate'

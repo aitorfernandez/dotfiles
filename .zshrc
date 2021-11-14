@@ -1,8 +1,8 @@
-export ZSH=/Users/aitorfernandez/.oh-my-zsh
+export ZSH=/Users/aitor.fernandez/.oh-my-zsh
 
 ZSH_THEME="odin"
 
-DEFAULT_USER="aitorfernandez"
+DEFAULT_USER="aitor.fernandez"
 
 plugins=(
   docker
@@ -10,6 +10,8 @@ plugins=(
   gcloud
   git
   terraform
+  kubectl
+  minikube
   zsh-syntax-highlighting
 )
 
@@ -29,8 +31,9 @@ export PATH=$GOPATH/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/aitorfernandez/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/aitorfernandez/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/aitor.fernandez/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/aitor.fernandez/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/aitorfernandez/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/aitorfernandez/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/aitor.fernandez/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/aitor.fernandez/google-cloud-sdk/completion.zsh.inc'; fi
+
 . "$HOME/.cargo/env"

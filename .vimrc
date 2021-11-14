@@ -4,7 +4,7 @@ call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
 call minpac#add('airblade/vim-gitgutter')
-call minpac#add('aitorfernandez/vim-redis')
+" call minpac#add('aitorfernandez/vim-redis')
 call minpac#add('arcticicestudio/nord-vim')
 " call minpac#add('cespare/vim-toml')
 call minpac#add('fatih/vim-go')
@@ -16,12 +16,13 @@ call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('mhinz/vim-grepper')
+call minpac#add('neoclide/coc.nvim')
 call minpac#add('OmniSharp/omnisharp-vim')
 call minpac#add('pangloss/vim-javascript')
 call minpac#add('plasticboy/vim-markdown')
-call minpac#add('racer-rust/vim-racer')
 call minpac#add('rust-lang/rust.vim')
 call minpac#add('SirVer/ultisnips')
+call minpac#add('tomlion/vim-solidity')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
@@ -94,10 +95,11 @@ set backupdir =$v/tmp/backup/
 set directory =$v/tmp/swap/
 set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
-set viminfo   ='100,n$v/tmp/viminfo
+set viminfo   ='1000,n$v/tmp/viminfo
 
 " fzf
-set rtp+=/usr/local/opt/fzf
+" set rtp+=/usr/local/opt/fzf
+set rtp+=/opt/homebrew/opt/fzf
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>' :Buffers<cr>
@@ -284,8 +286,11 @@ let g:ale_sign_column_always         = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'cs': ['OmniSharp']
+\   'cs': ['OmniSharp'],
+\   'rust': ['cargo', 'rls', 'analyzer']
 \ }
+
+let g:ale_rust_rls_toolchain = 'stable'
 
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
@@ -380,6 +385,9 @@ nnoremap <leader>cq :cclose<cr>
 nnoremap <leader>pq :pclose<cr>
 " nnoremap gq :cclose<cr>
 " nnoremap gw :cw<cr>
+
+" rust
+let g:rustfmt_autosave = 1
 
 " vim-markdown
 let g:vim_markdown_fenced_languages = ['bash=sh', 'go=go', 'js=javascript']
