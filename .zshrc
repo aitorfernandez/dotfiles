@@ -13,6 +13,7 @@ plugins=(
   kubectl
   minikube
   zsh-syntax-highlighting
+  cargo
 )
 
 if type ag &> /dev/null; then
