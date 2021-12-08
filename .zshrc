@@ -1,8 +1,8 @@
-export ZSH=/Users/aitor.fernandez/.oh-my-zsh
+export ZSH=/Users/aitorfernandez/.oh-my-zsh
 
 ZSH_THEME="odin"
 
-DEFAULT_USER="aitor.fernandez"
+DEFAULT_USER="aitorfernandez"
 
 plugins=(
   docker

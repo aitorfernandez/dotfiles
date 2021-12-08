@@ -1,0 +1,8 @@
+{
+  "yaml.schemas": {
+    "kubernetes": "/*.yaml"
+  },
+  "rust-analyzer.procMacro.enable": true,
+  "rust-analyzer.cargo.loadOutDirsFromCheck": true,
+  "rust-analyzer.diagnostics.disabled": ["unresolved-import"]
+}

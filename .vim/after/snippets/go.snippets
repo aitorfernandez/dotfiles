@@ -1,9 +1,7 @@
 snippet tef "t.Errorf()"
 	t.Errorf("${1}", ${2})
-
 snippet te "t.Error()"
 	t.Error(${1})
-
 snippet errfr "Error handling with fmt"
 	if ${1}err != nil {
 		return ${2}fmt.Errorf("${3} %w", err)

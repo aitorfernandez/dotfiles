@@ -1,36 +1,24 @@
 snippet ri
 	import React from 'react'
-
 snippet risc
 	import styled from 'styled-components'
-
 snippet rip
 	import PropTypes from 'prop-types'
-
 snippet rirp
 	import React from 'react'
 	import PropTypes from 'prop-types'
-
 snippet rirpsc
 	import React from 'react'
 	import PropTypes from 'prop-types'
 	import styled from 'styled-components'
-
-# import theme helper
-snippet rit
-	import { t${1} } from '${1}'
-
 snippet rpt
 	${1}.propTypes = {
 		${2}: PropTypes.${0},
 	}
-
-# Default props for Presentational component
 snippet rdp
 	${1}.defaultProps = {
 		${2}: ${0},
 	}
-
 # New story
 snippet rns
 	import React from 'react'
@@ -45,25 +33,16 @@ snippet rns
 	export const Default = () => (
 		<${6:$1} />
 	)
-
 # export
 snippet ef "export { } from ''"
 	export { ${1} } from './${2:$1}'
-
-# Get theme
-snippet t
-	${1}: ${t('${2}')};
-
 # styled-components variables
 snippet scc
 	const ${1} = styled.${2}
-
 # css
 snippet bred
 	border: 1px solid red;
-
 snippet bgreen
 	border: 1px solid green;
-
 snippet bblue
 	border: 1px solid blue;

@@ -6,7 +6,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('airblade/vim-gitgutter')
 " call minpac#add('aitorfernandez/vim-redis')
 call minpac#add('arcticicestudio/nord-vim')
-" call minpac#add('cespare/vim-toml')
+call minpac#add('cespare/vim-toml')
 call minpac#add('fatih/vim-go')
 call minpac#add('hashivim/vim-terraform')
 call minpac#add('honza/vim-snippets')
@@ -98,8 +98,8 @@ set viewdir   =$v/tmp/view/
 set viminfo   ='1000,n$v/tmp/viminfo
 
 " fzf
-" set rtp+=/usr/local/opt/fzf
-set rtp+=/opt/homebrew/opt/fzf
+set rtp+=/usr/local/opt/fzf
+" set rtp+=/opt/homebrew/opt/fzf
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>' :Buffers<cr>
@@ -388,6 +388,12 @@ nnoremap <leader>pq :pclose<cr>
 
 " rust
 let g:rustfmt_autosave = 1
+
+" rusty-tags
+" cargo install rusty-tags
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
+autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
 " vim-markdown
 let g:vim_markdown_fenced_languages = ['bash=sh', 'go=go', 'js=javascript']
