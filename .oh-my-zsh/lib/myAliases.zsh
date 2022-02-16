@@ -45,5 +45,10 @@ alias ac='deactivate &> /dev/null; source .venv/bin/activate'
 alias de='deactivate'
 
 alias cc='~/.cargo/bin/cargo check'
+alias cy='~/.cargo/bin/cargo clippy'
 alias cr='~/.cargo/bin/cargo run'
 alias ct='~/.cargo/bin/cargo test'
+
+# eval
+alias evalssh='eval `ssh-agent -s`;ssh-add'
+alias evaldockerenv='eval $(minikube docker-env)'

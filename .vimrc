@@ -218,7 +218,7 @@ nnoremap <leader>p "+p
 
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w!<cr>
-nnoremap <leader>a :wa!<cr>
+" nnoremap <leader>a :wa!<cr>
 
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
@@ -290,6 +290,8 @@ let g:ale_linters = {
 \   'rust': ['cargo', 'rls', 'analyzer']
 \ }
 
+let g:ale_fix_on_save        = 1
+let g:ale_fixers             = ['eslint']
 let g:ale_rust_rls_toolchain = 'stable'
 
 nmap <silent> <leader>aj :ALENext<cr>
