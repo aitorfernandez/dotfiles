@@ -287,7 +287,8 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'cs': ['OmniSharp'],
-\   'rust': ['cargo', 'rls', 'analyzer']
+\   'rust': ['cargo', 'rls', 'analyzer'],
+\   'solidity': ['solium']
 \ }
 
 let g:ale_fix_on_save        = 1

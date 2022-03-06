@@ -26,6 +26,9 @@ alias v='/usr/local/bin/vim .'
 # alias vim='/opt/homebrew/bin/vim'
 # alias v='/opt/homebrew/bin/vim .'
 
+alias sublime='open -a /Applications/Sublime\ Text.app'
+alias s='open -a /Applications/Sublime\ Text.app .'
+
 # Git
 alias gtheirs='git checkout --theirs'
 alias gours='git checkout --ours'
