@@ -47,10 +47,11 @@ alias venv='python -m venv .venv'
 alias ac='deactivate &> /dev/null; source .venv/bin/activate'
 alias de='deactivate'
 
+alias cb='~/.cargo/bin/cargo +nightly bench'
 alias cc='~/.cargo/bin/cargo check'
-alias cy='~/.cargo/bin/cargo clippy'
 alias cr='~/.cargo/bin/cargo run'
 alias ct='~/.cargo/bin/cargo test'
+alias cy='~/.cargo/bin/cargo clippy'
 
 # eval
 alias evalssh='eval `ssh-agent -s`;ssh-add'
