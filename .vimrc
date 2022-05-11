@@ -104,8 +104,8 @@ set rtp+=/usr/local/opt/fzf
 
 nnoremap <C-p> :Files<cr>
 nnoremap <leader>' :Buffers<cr>
-nnoremap <leader>m :Marks<cr>
-nnoremap <leader>s :Snippets<cr>
+nnoremap <leader>M :Marks<cr>
+nnoremap <leader>S :Snippets<cr>
 
 let g:fzf_preview_window = ''
 " let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'horizontal' } }
