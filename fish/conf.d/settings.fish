@@ -1,5 +1,7 @@
 #!/usr/bin/env fish
 
+alias t 'tmux -u'
+
 # List direcory contents
 alias l 'ls -la'
 alias lsa 'ls -lah'
