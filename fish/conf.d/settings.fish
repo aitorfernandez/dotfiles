@@ -2,6 +2,9 @@
 
 alias t 'tmux -u'
 
+alias vim='/usr/local/bin/vim'
+alias v='/usr/local/bin/vim .'
+
 # List direcory contents
 alias l 'ls -la'
 alias lsa 'ls -lah'
