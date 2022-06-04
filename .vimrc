@@ -10,19 +10,19 @@ call minpac#add('arcticicestudio/nord-vim')
 " call minpac#add('fatih/vim-go')
 " " call minpac#add('habamax/vim-asciidoctor')
 " call minpac#add('hashivim/vim-terraform')
-" call minpac#add('honza/vim-snippets')
+call minpac#add('honza/vim-snippets')
 " call minpac#add('itchyny/lightline.vim')
 " call minpac#add('jparise/vim-graphql')
 " call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 " call minpac#add('maxmellon/vim-jsx-pretty')
 " call minpac#add('mhinz/vim-grepper')
-call minpac#add('neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'})
+call minpac#add('neoclide/coc.nvim')
 " call minpac#add('OmniSharp/omnisharp-vim')
 " call minpac#add('pangloss/vim-javascript')
-" call minpac#add('plasticboy/vim-markdown')
+" call minpac#add('plasticboy/vim-markdown' )
 call minpac#add('rust-lang/rust.vim')
-" call minpac#add('SirVer/ultisnips')
+call minpac#add('SirVer/ultisnips')
 " call minpac#add('tomlion/vim-solidity')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
@@ -108,17 +108,17 @@ set viminfo   ='1000,n$v/tmp/viminfo
 "
 " let g:fzf_preview_window = ''
 " " let g:fzf_layout = { 'window': { 'width': 1, 'height': 0.5, 'yoffset': 1, 'border': 'horizontal' } }
-"
-" " searching
-" set incsearch hlsearch smartcase ignorecase
-" " turn off highlighting in insert mode, and turn back on again when leaving
-" augroup highlight_search
-"   autocmd!
-"   autocmd InsertEnter * :setlocal nohlsearch
-"   autocmd InsertLeave * :setlocal hlsearch
-" augroup END
-" nnoremap <leader>/ :nohlsearch<cr>
-"
+
+" searching
+set incsearch hlsearch smartcase ignorecase
+" turn off highlighting in insert mode, and turn back on again when leaving
+augroup highlight_search
+  autocmd!
+  autocmd InsertEnter * :setlocal nohlsearch
+  autocmd InsertLeave * :setlocal hlsearch
+augroup END
+nnoremap <leader>/ :nohlsearch<cr>
+
 " " spelling
 " " :setlocal spell
 " augroup spell
@@ -182,13 +182,13 @@ let g:netrw_dirhistmax    = 0
 " nnoremap <silent> [b :bprevious<cr>
 " nnoremap <silent> ]b :bnext<cr>
 "
-" nnoremap <leader>- :e.<cr>
-" " from tpope/vim-vinegar
-" nnoremap <plug>(NetrwUp) :E<cr>
-" if empty(maparg('-', 'n'))
-"   nmap - <plug>(NetrwUp)
-" endif
-"
+nnoremap <leader>- :e.<cr>
+" from tpope/vim-vinegar
+nnoremap <plug>(NetrwUp) :E<cr>
+if empty(maparg('-', 'n'))
+  nmap - <plug>(NetrwUp)
+endif
+
 " augroup file_type_language_characteristics
 "   autocmd!
 "   " autocmd FileType vim :setlocal foldmethod=marker
@@ -276,17 +276,17 @@ command! PackClean call minpac#clean()
 command! PackStatus call minpac#status()
 command! PackUpdate call minpac#update()
 
-" " snippets
-" let g:UltiSnipsExpandTrigger       = '<tab>'
-" let g:UltiSnipsJumpForwardTrigger  = '<tab>'
-" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" snippets
+let g:UltiSnipsExpandTrigger       = '<tab>'
+let g:UltiSnipsJumpForwardTrigger  = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " ale
 let g:ale_sign_column_always         = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
-\ 'rust': ['analyzer'],
+\ 'rust': ['rls', 'analyzer'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
@@ -398,6 +398,10 @@ let g:rustfmt_autosave = 1
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/,$RUST_SRC_PATH/rusty-tags.vi
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
+
+" coc
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " " vim-markdown
 " let g:vim_markdown_fenced_languages = ['bash=sh', 'go=go', 'js=javascript']
