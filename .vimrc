@@ -6,7 +6,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 " call minpac#add('airblade/vim-gitgutter')
 " " call minpac#add('aitorfernandez/vim-redis')
 call minpac#add('arcticicestudio/nord-vim')
-" call minpac#add('cespare/vim-toml')
+call minpac#add('cespare/vim-toml')
 " call minpac#add('fatih/vim-go')
 " " call minpac#add('habamax/vim-asciidoctor')
 " call minpac#add('hashivim/vim-terraform')
@@ -131,6 +131,7 @@ set wildmenu                                       " Command line autocompletion
 set wildmode   =list:longest,full                  " Shows all the options
 set wildignore+=*.sw?                              " Vim swap files
 set wildignore+=*/node_modules/*,*/dist,*/vendor/* " JS
+set wildignore+=*/target/*                         " Rust
 
 set wildcharm=<C-z>
 
@@ -169,8 +170,8 @@ let g:netrw_banner        = 0
 let g:netrw_sort_options  = 'i'
 " let g:netrw_sort_sequence = '[\/]\s'
 " " keep the cursor in the netrw window
-" let g:netrw_altv          = 1
-" let g:netrw_preview       = 1
+let g:netrw_altv          = 1
+let g:netrw_preview       = 1
 " " it defines the default proportion of the new window relative to the current window
 " let g:netrw_winsize       = 50
 " " let g:netrw_localrmdir  = 'rm -r'
@@ -296,8 +297,8 @@ let g:ale_fixers = {
 let g:ale_fix_on_save        = 1
 let g:ale_rust_rls_toolchain = 'stable'
 
-nmap <silent> <leader>aj :ALENext<cr>
-nmap <silent> <leader>ak :ALEPrevious<cr>
+nnoremap <silent> <leader>an :ALENext<cr>
+nnoremap <silent> <leader>ap :ALEPrevious<cr>
 
 " " lightline.vim
 " let g:lightline = {
@@ -312,10 +313,10 @@ nmap <silent> <leader>ak :ALEPrevious<cr>
 " \ }
 "
 " vim-fugitive
-" nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
 nnoremap <leader>gs :vert :Git<cr>
-nnoremap <leader>gc :Git commit<cr>
-nnoremap <leader>gd :Gdiff<cr>
+" nnoremap <leader>gs :vert Git <bar> 25winc <<cr>
+" nnoremap <leader>gc :Git commit<cr>
+" nnoremap <leader>gd :Gdiff<cr>
 
 let g:fugitive_autoreload_status = 0
 

@@ -4,7 +4,11 @@ set -g theme_color_scheme nord
 source $HOME/.config/fish/conf.d/settings.fish
 
 if status is-interactive
-    # Commands to run in interactive sessions can go here
+  # Commands to run in interactive sessions can go here
+
+  set -gx ATUIN_NOBIND "true"
+  atuin init fish | source
+  bind \cr _atuin_search
 end
 
 # path
