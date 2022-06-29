@@ -1,5 +1,6 @@
 set -gx EDITOR vim
 set -g theme_color_scheme nord
+set -x BAT_THEME Nord
 
 source $HOME/.config/fish/conf.d/settings.fish
 
