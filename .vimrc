@@ -270,6 +270,7 @@ let g:ale_fixers = {
 \ }
 
 let g:ale_fix_on_save        = 1
+let g:ale_fixers             = ['eslint']
 let g:ale_rust_rls_toolchain = 'stable'
 
 nnoremap <silent> <leader>an :ALENext<cr>
