@@ -3,19 +3,18 @@ call minpac#init()
 
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
+call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('cespare/vim-toml')
 call minpac#add('honza/vim-snippets')
-" call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
-" call minpac#add('maxmellon/vim-jsx-pretty')
-" call minpac#add('mhinz/vim-grepper')
+call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('neoclide/coc.nvim')
-" call minpac#add('pangloss/vim-javascript')
 call minpac#add('preservim/vim-markdown')
 call minpac#add('rust-lang/rust.vim')
 call minpac#add('SirVer/ultisnips')
+call minpac#add('styled-components/vim-styled-components')
 call minpac#add('tpope/vim-commentary')
 call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-repeat')
@@ -89,11 +88,10 @@ set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='1000,n$v/tmp/viminfo
 
-" fzf
-set rtp+=/usr/local/opt/fzf
-
+"
 nnoremap <leader>B :Buffers<cr>
-nnoremap <leader>F :Files<cr>
+nnoremap <leader>f :Rg<cr>
+nnoremap <leader>ls :Files<cr>
 nnoremap <leader>M :Marks<cr>
 nnoremap <leader>S :Snippets<cr>
 nnoremap <leader>T :Tags<cr>
@@ -109,13 +107,6 @@ augroup highlight_search
   autocmd InsertLeave * :setlocal hlsearch
 augroup END
 nnoremap <leader>/ :nohlsearch<cr>
-
-" " spelling
-" " :setlocal spell
-" augroup spell
-"   autocmd!
-"   autocmd FileType latex,tex,markdown setlocal spell
-" augroup END
 
 " wildmenu
 set wildmenu                                       " Command line autocompletion
@@ -140,19 +131,7 @@ augroup buf_write_pre_trim_whitespace
   autocmd BufWritePre * :call TrimWhitespace()
 augroup end
 
-" wrap long lines in quickfix
-" augroup quickfix
-"   autocmd!
-"   autocmd FileType qf setlocal wrap
-" augroup END
-
 vnoremap <leader>s :sort i<cr>
-
-" save
-" augroup insert_leave_update
-"   autocmd!
-"   autocmd InsertLeave * silent! update
-" augroup END
 
 " netrw
 let g:netrw_banner       = 0
@@ -178,24 +157,6 @@ if empty(maparg('-', 'n'))
   nmap - <plug>(NetrwUp)
 endif
 
-" augroup file_type_language_characteristics
-"   autocmd!
-"   " autocmd FileType vim :setlocal foldmethod=marker
-"   autocmd FileType javascript,css,json :setlocal foldmethod=syntax
-"   autocmd FileType javascript,html :setlocal nowrap
-" augroup END
-
-" tags
-" set tags=.tags
-" augroup file_type_ctags
-"   " autocmd FileType python command! Ctags !ctags
-"   "   \ --languages=python --exclude=**/.tox --exclude=**/.venv --exclude=.git -f .tags -R .
-"   autocmd FileType netrw,javascript command! Ctags !ctags
-"     \ --languages=javascript --exclude=node_modules --exclude=dist --exclude=build --exclude=.git -f .tags -R .
-"   autocmd FileType go command! Ctags !ctags
-"     \ --languages=go --exclude=vendor -f .tags -R .
-" augroup END
-"
 " mappings
 
 vnoremap > >gv
@@ -208,15 +169,12 @@ nnoremap <leader>p "+p
 nnoremap <leader>q :q<cr>
 nnoremap <leader>w :w!<cr>
 
+nnoremap <leader>o :only<cr>
+
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 
 nnoremap <leader>e :e **/*<C-z>
-
-nnoremap <leader>l :set list!<cr>
-
-" buffers
-nnoremap <leader>ls :ls<cr>:b<space>
 
 " tabs
 for i in range(1, 9)
@@ -280,31 +238,6 @@ nnoremap <silent> <leader>ap :ALEPrevious<cr>
 nnoremap <leader>gs :vert :Git<cr>
 
 let g:fugitive_autoreload_status = 0
-
-" " grepper
-" runtime plugin/grepper.vim
-"
-" let g:grepper.highlight    = 1
-" let g:grepper.tools        = ['ag', 'grep', 'git']
-" " quote the query automatically
-" let g:grepper.prompt_quote = 1
-" " the short grep command
-" let g:grepper.prompt_text  = '$t> '
-" let g:grepper.ag.grepprg  .=
-" \ ' --ignore *.lock --ignore-dir *.lock --ignore-dir node_modules --ignore-dir .venv --ignore-dir *.egg-info --ignore-dir bin --ignore-dir pkg'
-"
-" nnoremap <silent><leader>* :Grepper -jump -cword -noprompt<cr>
-" nnoremap <silent><leader>g :Grepper -tool git -noopen -jump<cr>
-" nnoremap <silent><leader>sa :Grepper -open -switch -prompt<cr>
-"
-" nmap sz <plug>(GrepperOperator)
-" xmap sz <plug>(GrepperOperator)
-
-" map <C-n> :cnext<cr>
-" map <C-m> :cprevious<cr>
-"
-" nnoremap <leader>cq :cclose<cr>
-" nnoremap <leader>pq :pclose<cr>
 
 " rust
 let g:rustfmt_autosave = 1
