@@ -88,7 +88,9 @@ set undodir   =$v/tmp/undo/
 set viewdir   =$v/tmp/view/
 set viminfo   ='1000,n$v/tmp/viminfo
 
-"
+" fzf
+set rtp+=/usr/local/opt/fzf
+
 nnoremap <leader>B :Buffers<cr>
 nnoremap <leader>f :Rg<cr>
 nnoremap <leader>ls :Files<cr>
@@ -97,6 +99,8 @@ nnoremap <leader>S :Snippets<cr>
 nnoremap <leader>T :Tags<cr>
 
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --follow --glob '!.git'"
+
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
 
 " searching
 set incsearch hlsearch smartcase ignorecase
