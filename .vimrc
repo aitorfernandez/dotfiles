@@ -258,5 +258,7 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+inoremap <silent><expr> <C-h> coc#refresh()
+
 " colorscheme at the end of the file to avoid color issues
 colorscheme nord
