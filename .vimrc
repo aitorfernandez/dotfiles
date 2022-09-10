@@ -6,6 +6,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('airblade/vim-gitgutter')
 call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('cespare/vim-toml')
+call minpac#add('hashivim/vim-terraform')
 call minpac#add('honza/vim-snippets')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
@@ -209,6 +210,9 @@ vnoremap H ^
 
 " plugins
 
+" terraform
+let g:terraform_fmt_on_save = 1
+
 " minpac
 command! PackClean call minpac#clean()
 command! PackStatus call minpac#status()
@@ -224,7 +228,7 @@ let g:ale_sign_column_always         = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
-\ 'rust': ['rls', 'analyzer'],
+\ 'rust': ['analyzer', 'rls'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
