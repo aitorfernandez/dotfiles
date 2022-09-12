@@ -8,11 +8,13 @@ call minpac#add('arcticicestudio/nord-vim')
 call minpac#add('cespare/vim-toml')
 call minpac#add('hashivim/vim-terraform')
 call minpac#add('honza/vim-snippets')
+call minpac#add('itchyny/lightline.vim')
 call minpac#add('junegunn/fzf.vim')
 call minpac#add('kshenoy/vim-signature')
 call minpac#add('maxmellon/vim-jsx-pretty')
 call minpac#add('neoclide/coc.nvim')
 call minpac#add('preservim/vim-markdown')
+call minpac#add('Raimondi/delimitMate')
 call minpac#add('rust-lang/rust.vim')
 call minpac#add('SirVer/ultisnips')
 call minpac#add('styled-components/vim-styled-components')
@@ -263,6 +265,18 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 inoremap <silent><expr> <C-h> coc#refresh()
+
+" lightline
+let g:lightline = {
+\ 'colorscheme': 'nord',
+\ 'active': {
+\   'left': [ [ 'mode', 'paste' ],
+\             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+\ },
+\ 'component_function': {
+\   'gitbranch': 'FugitiveHead'
+\ },
+\ }
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme nord
