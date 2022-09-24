@@ -27,7 +27,8 @@ alias gours 'git checkout --ours'
 # http://www.jukie.net/bart/blog/pimping-out-git-log
 alias glog "git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
-alias cb '~/.cargo/bin/cargo +nightly bench'
-alias cc '~/.cargo/bin/cargo check'
-alias cr '~/.cargo/bin/cargo run'
-alias ct '~/.cargo/bin/cargo test'
+alias cb 'cargo +nightly bench'
+alias cc 'cargo check'
+alias ccc 'cargo check && cargo clippy --all-targets --workspace -- -D warnings'
+alias cr 'cargo run'
+alias ct 'cargo test'
