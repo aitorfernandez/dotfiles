@@ -2,8 +2,8 @@
 
 alias t 'tmux -u'
 
-alias vim '/usr/local/bin/vim'
-alias v '/usr/local/bin/vim .'
+alias vim '/usr/local/bin/nvim'
+alias v '/usr/local/bin/nvim .'
 
 # List direcory contents
 alias l 'ls -la'
