@@ -2,7 +2,6 @@
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
   },
-  "diagnostic.displayByAle": true,
   "rust-analyzer.cargo.loadOutDirsFromCheck": true,
   "rust-analyzer.disableProgressNotifications": true,
   "rust-analyzer.inlayHints.chainingHints.enable": false,

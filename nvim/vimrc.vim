@@ -184,11 +184,8 @@ let g:UltiSnipsJumpForwardTrigger  = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " ale
-let g:ale_sign_column_always         = 1
-let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
-\ 'rust': ['analyzer'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
@@ -196,11 +193,11 @@ let g:ale_fixers = {
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
 
-let g:ale_completion_autoimport = 0
-let g:ale_fix_on_save           = 1
-let g:ale_linters_explicit      = 1
-let g:ale_rust_rls_toolchain    = 'stable'
-let g:ale_virtualtext_cursor    = 0
+let g:airline#extensions#ale#enabled = 1
+let g:ale_completion_autoimport      = 0
+let g:ale_fix_on_save                = 1
+let g:ale_rust_rls_toolchain         = 'stable'
+let g:ale_virtualtext_cursor         = 0
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
