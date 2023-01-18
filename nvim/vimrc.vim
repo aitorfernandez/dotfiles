@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim'
 Plug 'cespare/vim-toml'
+Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
@@ -20,7 +21,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -103,18 +103,6 @@ set wildmode   =list:longest,full                  " Shows all the options
 set wildignore+=*.sw?                              " Vim swap files
 set wildignore+=*/node_modules/*,*/dist,*/vendor/* " JS
 set wildignore+=*/target/*                         " Rust
-
-" trailing whitespace
-fun! TrimWhitespace()
-  let l:save = winsaveview()
-  keeppatterns %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-
-augroup buf_write_pre_trim_whitespace
-  autocmd!
-  autocmd BufWritePre * :call TrimWhitespace()
-augroup end
 
 vnoremap <leader>s :sort i<cr>
 
@@ -200,19 +188,22 @@ let g:ale_sign_column_always         = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
-\ 'rust': ['analyzer', 'rls'],
+\ 'rust': ['analyzer'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
 \ 'rust': ['rustfmt'],
+\ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
 
-let g:ale_fix_on_save        = 1
-let g:ale_fixers             = ['eslint']
-let g:ale_rust_rls_toolchain = 'stable'
+let g:ale_completion_autoimport = 0
+let g:ale_fix_on_save           = 1
+let g:ale_linters_explicit      = 1
+let g:ale_rust_rls_toolchain    = 'stable'
+let g:ale_virtualtext_cursor    = 0
 
-nnoremap <silent> <leader>an :ALENext<cr>
-nnoremap <silent> <leader>ap :ALEPrevious<cr>
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " vim-fugitive
 nnoremap <leader>gs :vert :Git<cr>

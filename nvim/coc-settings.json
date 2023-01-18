@@ -2,13 +2,14 @@
   "yaml.schemas": {
     "kubernetes": "/*.yaml"
   },
+  "diagnostic.displayByAle": true,
   "rust-analyzer.cargo.loadOutDirsFromCheck": true,
   "rust-analyzer.disableProgressNotifications": true,
   "rust-analyzer.inlayHints.chainingHints.enable": false,
-  "rust-analyzer.inlayHints.enable": false,
-  "rust-analyzer.procMacro.enable": true,
   "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
   "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.procMacro.enable": true,
   "suggest.autoTrigger": "none"
 }
