@@ -7,7 +7,9 @@ Plug 'dense-analysis/ale'
 Plug 'hashivim/vim-terraform'
 Plug 'honza/vim-snippets'
 Plug 'itchyny/lightline.vim'
+Plug 'jparise/vim-graphql'
 Plug 'kshenoy/vim-signature'
+Plug 'leafgarland/typescript-vim'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
@@ -186,9 +188,13 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " ale
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
+\ 'typescript': ['tsserver', 'eslint'],
+\ 'typescriptreact': ['tsserver', 'eslint'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
+\ 'typescript': ['eslint'],
+\ 'typescriptreact': ['eslint'],
 \ 'rust': ['rustfmt'],
 \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \ }
@@ -199,8 +205,8 @@ let g:ale_fix_on_save                = 1
 let g:ale_rust_rls_toolchain         = 'stable'
 let g:ale_virtualtext_cursor         = 0
 
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
+nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " vim-fugitive
 nnoremap <leader>gs :vert :Git<cr>
@@ -240,6 +246,14 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 inoremap <silent><expr> <C-h> coc#refresh()
+
+inoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-j>"
+inoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " colorscheme at the end of the file to avoid color issues
 colorscheme nord
