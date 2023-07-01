@@ -29,6 +29,8 @@ call plug#end()
 syntax on
 filetype plugin indent on
 
+set re =0
+
 set updatetime =100
 
 set shell =/usr/local/bin/fish
@@ -188,8 +190,8 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 " ale
 let g:ale_linters = {
 \ 'javascript': ['eslint'],
-\ 'typescript': ['tsserver', 'eslint'],
-\ 'typescriptreact': ['tsserver', 'eslint'],
+\ 'typescript': ['eslint'],
+\ 'typescriptreact': ['eslint'],
 \ }
 let g:ale_fixers = {
 \ 'javascript': ['eslint'],
@@ -251,7 +253,7 @@ inoremap <silent><nowait><expr> <C-j> coc#float#has_scroll() ? coc#float#scroll(
 inoremap <silent><nowait><expr> <C-k> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-k>"
 
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
