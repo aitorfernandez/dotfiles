@@ -1,3 +1,4 @@
 *.log
 fish_variables
 fish/completions/bun.fish
+nvim/tmp
