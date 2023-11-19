@@ -1,20 +1,20 @@
 local options = {
     -- line numbers
-    number = true
-    relativenumber = true
+    number = true,
+    relativenumber = true,
 
     -- Searching
-    incsearch = true
-    hlsearch = true
-    smartcase = true
-    ignorecase = true
+    incsearch = true,
+    hlsearch = true,
+    smartcase = true,
+    ignorecase = true,
 
-    completeopt = 'menuone,noselect,noinsert'
+    completeopt = 'menuone,noselect,noinsert',
 
     errorbells = false,
 
     -- fold
-    foldcolumn = 0,
+    foldcolumn = '0',
     foldnestmax = 0,
     foldlevel = 99,
     foldlevelstart = 99,
