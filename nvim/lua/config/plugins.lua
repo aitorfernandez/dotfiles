@@ -13,7 +13,12 @@ return {
         end,
     },
     'hrsh7th/vim-vsnip-integ',
-    'neovim/nvim-lspconfig',
+    {
+        'neovim/nvim-lspconfig',
+        config = function()
+            require("plugins.lspconfig")
+        end,
+    },
     {
         'nvim-telescope/telescope.nvim',
         dependencies = { 'nvim-lua/plenary.nvim' },
@@ -59,6 +64,13 @@ return {
         'stevearc/conform.nvim',
         config = function()
             require('plugins.conform')
+        end,
+    },
+    {
+        'MunifTanjim/prettier.nvim',
+        dependencies = { 'jose-elias-alvarez/null-ls.nvim' },
+        config = function()
+            require('plugins.prettier')
         end,
     },
     {

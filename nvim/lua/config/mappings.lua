@@ -9,18 +9,24 @@ if vim.fn.empty(vim.fn.maparg('-', 'n')) then
     keymap('n', '-', '<plug>(NetrwUp)', noremap_silent)
 end
 
-keymap('x', '>', '>gv', noremap_silent)
-keymap('x', '<', '<gv', noremap_silent)
+-- leader keymaps
+
+keymap('x', '<leader>s', ':sort i<CR>', noremap_silent)
+
+keymap('n', '<leader>o', ':only<CR>', noremap_silent)
 
 keymap('x', '<leader>y', '"+y', noremap_silent)
 keymap('n', '<leader>p', '"+p', noremap_silent)
 
 keymap('n', '<leader>/', ':nohlsearch<CR>', noremap_silent)
 
-keymap('i', 'jk', '<Esc>', noremap)
-
 keymap('n', '<leader>q', ':q<CR>', noremap_silent)
 keymap('n', '<leader>w', ':w!<CR>', noremap_silent)
+
+keymap('x', '>', '>gv', noremap_silent)
+keymap('x', '<', '<gv', noremap_silent)
+
+keymap('i', 'jk', '<Esc>', noremap)
 
 -- repeat in visual mode
 keymap('x', '.', ':norm.<CR>', noremap_silent)
@@ -35,7 +41,5 @@ keymap('v', 'J', '}', noremap)
 keymap('v', 'K', '{', noremap)
 keymap('v', 'L', 'g_', noremap)
 keymap('v', 'H', '^', noremap)
-
-keymap('x', '<leader>s', ':sort i<CR>', noremap_silent)
 
 keymap('n', '<C-]>', 'g<C-]>', noremap_silent)

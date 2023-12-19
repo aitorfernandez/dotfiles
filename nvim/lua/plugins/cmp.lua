@@ -25,9 +25,9 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete()
     }),
     sources = cmp.config.sources({
-        { name = 'path' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help'},
+        { name = 'path' },
         { name = 'vsnip' },
         { name = 'buffer' },
     }),

@@ -1,5 +1,5 @@
 local options = {
-    -- line numbers
+    -- Line numbers
     number = true,
     relativenumber = true,
 
@@ -13,11 +13,24 @@ local options = {
 
     errorbells = false,
 
-    -- fold
+    expandtab = true,
+
+    -- Fold
     foldcolumn = '0',
     foldnestmax = 0,
     foldlevel = 99,
     foldlevelstart = 99,
+
+    tabstop = 2,
+    softtabstop = 2,
+    shiftwidth = 2,
+
+    -- Don't break words when wrapping text
+    linebreak = true,
+
+    -- Always show statusline
+    laststatus = 2,
+    display = lastline,
 }
 
 for k, v in pairs(options) do
