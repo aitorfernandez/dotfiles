@@ -22,6 +22,8 @@ require('config.netrw')
 require('config.options')
 require('config.mappings')
 
+require('config.tabs')
+
 -- Turn off highlighting in insert mode, and turn it back on again when leaving
 vim.api.nvim_exec([[
 augroup highlight_search

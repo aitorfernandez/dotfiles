@@ -37,4 +37,4 @@ cmp.setup({
     },
 })
 
-vim.keymap.set('n', "<leader>'", '<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>', { desc = 'toggle nvim-cmp' })
+vim.keymap.set('n', "<leader><leader>", '<cmd>lua vim.g.cmptoggle = not vim.g.cmptoggle<CR>', { desc = 'toggle nvim-cmp' })
