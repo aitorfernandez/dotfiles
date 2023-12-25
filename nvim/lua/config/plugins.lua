@@ -9,14 +9,14 @@ return {
             'hrsh7th/vim-vsnip',
         },
         config = function()
-            require("plugins.cmp")
+            require('plugins.cmp')
         end,
     },
     'hrsh7th/vim-vsnip-integ',
     {
         'neovim/nvim-lspconfig',
         config = function()
-            require("plugins.lspconfig")
+            require('plugins.lspconfig')
         end,
     },
     {
@@ -41,7 +41,7 @@ return {
     },
     {
         'williamboman/mason.nvim',
-        cmd = "Mason",
+        cmd = 'Mason',
         keys = {
           { '<leader>cm', '<cmd>Mason<cr>', desc = 'Mason' },
         },
@@ -51,7 +51,7 @@ return {
     },
     'williamboman/mason-lspconfig.nvim',
     {
-        "pmizio/typescript-tools.nvim",
+        'pmizio/typescript-tools.nvim',
         dependencies = {
             'nvim-lua/plenary.nvim',
             'neovim/nvim-lspconfig',
@@ -81,6 +81,15 @@ return {
             vim.g.mkdp_filetypes = { 'markdown' }
         end,
         ft = { 'markdown' },
+    },
+    {
+        'L3MON4D3/LuaSnip',
+        version = 'v2.*',
+        build = 'make install_jsregexp',
+        dependencies = { 'rafamadriz/friendly-snippets' },
+        config = function()
+            require('plugins.snip')
+        end,
     },
     {
         'arcticicestudio/nord-vim',
