@@ -22,6 +22,6 @@ vs.load({
 
 ls.filetype_extend('typescript', { 'javascript' })
 
-vim.keymap.set({'i'}, '<Tab>', function() ls.expand() end, silent)
+vim.keymap.set({'i'}, '<C-K>', function() ls.expand() end, silent)
 vim.keymap.set({'i', 's'}, '<C-L>', function() ls.jump( 1) end, silent)
 vim.keymap.set({'i', 's'}, '<C-J>', function() ls.jump(-1) end, silent)

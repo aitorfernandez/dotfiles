@@ -91,6 +91,7 @@ return {
             require('plugins.snip')
         end,
     },
+    'tpope/vim-commentary',
     {
         'arcticicestudio/nord-vim',
         config = function()
