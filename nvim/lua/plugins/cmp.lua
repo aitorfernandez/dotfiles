@@ -22,13 +22,13 @@ cmp.setup({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
         }),
-        ['<C-Space>'] = cmp.mapping.complete()
+        -- ['<C-Space>'] = cmp.mapping.complete()
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help'},
         { name = 'path' },
-        { name = 'vsnip' },
+        -- { name = 'vsnip' },
         { name = 'buffer' },
     }),
     window = {
