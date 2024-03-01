@@ -12,12 +12,12 @@ vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
         local opts = { buffer = ev.buf }
 
-        vim.keymap.set('n', 'S', vim.lsp.buf.hover, opts)
+        vim.keymap.set('n', 'H', vim.lsp.buf.hover, opts)
 
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 
-        vim.keymap.set('n', '<C-s>', vim.lsp.buf.signature_help, opts)
+        vim.keymap.set('n', '<C-h>', vim.lsp.buf.signature_help, opts)
     end
 })
