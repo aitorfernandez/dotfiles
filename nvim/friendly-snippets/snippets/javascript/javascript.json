@@ -1,6 +1,0 @@
-{
-    "const": {
-        "prefix": "c",
-        "body": ["const ${1:name} = ${2:value}"]
-    }
-}
