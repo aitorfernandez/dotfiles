@@ -1,0 +1,39 @@
+{
+  "files.autoSave": "onFocusChange",
+  "editor.minimap.size": "fit",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "workbench.iconTheme": "minimalistic-icons",
+  "workbench.editor.showIcons": false,
+  "workbench.startupEditor": "none",
+  "explorer.autoReveal": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.copyWithSyntaxHighlighting": false,
+  "explorer.confirmDelete": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "editor.accessibilitySupport": "off",
+  "files.exclude": {
+    "!**/.git": true,
+    "**/.git": false
+  },
+  "explorer.confirmDragAndDrop": false,
+  "update.showReleaseNotes": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "crates.compatibleDecorator": "",
+  "crates.errorDecorator": "! ! !",
+  "crates.incompatibleDecorator": "! ${version}",
+  "window.commandCenter": false,
+  "workbench.layoutControl.enabled": false,
+  "editor.screenReaderAnnounceInlineSuggestion": false,
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "editor.fontSize": 13,
+  "editor.inlayHints.fontSize": 5,
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
+  "rust-analyzer.inlayHints.lifetimeElisionHints.useParameterNames": true,
+  "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+  "editor.fontFamily": "Hack, Georgia, Consolas, Menlo, Monaco, monospace",
+  "editor.lineNumbers": "relative"
+}
