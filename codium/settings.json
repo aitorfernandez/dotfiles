@@ -28,7 +28,7 @@
   "window.commandCenter": false,
   "workbench.layoutControl.enabled": false,
   "editor.screenReaderAnnounceInlineSuggestion": false,
-  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.colorTheme": "Nord",
   "editor.fontSize": 13,
   "editor.inlayHints.fontSize": 5,
   "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "always",
